@@ -111,6 +111,12 @@
 .left-0 {
     left: 0px
 }
+.-top-\[100vh\] {
+    top: -100vh
+}
+.right-0 {
+    right: 0px
+}
 .-z-20 {
     z-index: -20
 }
@@ -122,6 +128,9 @@
 }
 .m-0 {
     margin: 0px
+}
+.m-5 {
+    margin: 1.25rem
 }
 .my-10 {
     margin-top: 2.5rem;
@@ -145,6 +154,9 @@
 .h-\[100vh\] {
     height: 100vh
 }
+.h-\[85vh\] {
+    height: 85vh
+}
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -157,6 +169,9 @@
 .w-screen {
     width: 100vw
 }
+.w-\[22vw\] {
+    width: 22vw
+}
 .grid-flow-col {
     grid-auto-flow: column
 }
@@ -168,6 +183,9 @@
 }
 .flex-row {
     flex-direction: row
+}
+.flex-wrap {
+    flex-wrap: wrap
 }
 .items-center {
     align-items: center
@@ -226,6 +244,10 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem
 }
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem
+}
 .pb-12 {
     padding-bottom: 3rem
 }
@@ -234,6 +256,9 @@
 }
 .pr-28 {
     padding-right: 7rem
+}
+.pb-16 {
+    padding-bottom: 4rem
 }
 .text-center {
     text-align: center
@@ -249,6 +274,9 @@
 }
 .text-5xl {
     font-size: 1.5rem
+}
+.text-29xl {
+    font-size: 3rem
 }
 .font-light {
     font-weight: 300
@@ -273,6 +301,10 @@
 }
 .text-\[\#ffff\] {
     color: #ffff
+}
+.text-\[\#3B3B3B\] {
+    --tw-text-opacity: 1;
+    color: rgb(59 59 59 / var(--tw-text-opacity))
 }
 .no-underline {
     text-decoration-line: none
