@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Index from './pages/index'
+import Index from './pages/Index'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Collection from './pages/Collection.jsx'
 import CollectionItems from './pages/CollectionItems'
+import Item from './pages/item'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -16,6 +17,9 @@ const router = createBrowserRouter([
   {
     path:'/collection/:id',
     element:<CollectionItems/>
+  },{
+    path:'/item/:id',
+    element:<Item/>
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
