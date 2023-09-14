@@ -1,33 +1,36 @@
-import { useEffect, useState } from "react"
-import {v4 as uuid}  from 'uuid'
-import Nav from "../components/Nav"
-import Footer from "../components/Footer"
-const collectionsList= ()=>{
-    const [collections,setCollection ] = useState(null)
+import { useEffect,useState } from "react";
+import {v4 as uuid} from 'uuid'
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import { useParams } from "react-router-dom";
+const itemsList= ()=>{
+    const [items,setItems ] = useState(null)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
-
+    const {id}=useParams()
     useEffect(()=>{
-        
-        fetch('https://inventory-karim.fly.dev/collection/api').then((data)=>{
+        fetch(`https://inventory-karim.fly.dev/collection/${id}/api`).then((data)=>{
            return data.json()    
         }).then((data)=>{
-            setCollection(data)
+            setItems(data)
             console.log('data',data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
 
     
     },[])
-    return {collections,error,loading}
+    return {items,error,loading}
 }
-function Collection(){
-    const {collections,error,loading} =collectionsList()
-    if(error) return <h1>error</h1>
+function CollectionItems(){
+    const {items,error,loading} =itemsList()
+    if(error){ 
+        console.log(error)
+        return <h1>error</h1>}
     if(loading) return <h1>loading</h1>
     return(
-        <div>
-           <picture className="absolute  -z-20">
+
+     <div>
+    <picture className="absolute  -z-20">
       <source
       media="(max-width: 767px)"
       sizes="(max-width: 767px) 100vw, 767px"
@@ -35,13 +38,13 @@ function Collection(){
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_1_1,c_fill,g_auto__c_scale,w_200.jpg 200w,
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_1_1,c_fill,g_auto__c_scale,w_457.jpg 457w,
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_1_1,c_fill,g_auto__c_scale,w_643.jpg 643w,
-      ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_1_1,c_fill,g_auto__c_scale,w_767.jpg 767w"/>
+      ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_1_1,c_fill,g_auto__c_scale,w_767.jpg 767w" />
       <source
       media="(min-width: 768px) and (max-width: 991px)"
       sizes="(max-width: 991px) 70vw, 694px"
       srcSet="
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_4_3,c_fill,g_auto__c_scale,w_538.jpg 538w,
-      ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_4_3,c_fill,g_auto__c_scale,w_694.jpg 694w"/>
+      ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_4_3,c_fill,g_auto__c_scale,w_694.jpg 694w" />
       <img className="w-screen h-[100vh]"
       sizes="(max-width: 3500px) 40vw, 1400px"
       srcSet="
@@ -79,27 +82,34 @@ function Collection(){
                 show your personality</h1>
             
             </section>
-            <h1 className="text-center  font-light pb-16 text-17xl text-[#3C3C34]">collections</h1>
-              <section className="flex flex-wrap justify-center">
-                {  collections.collections.map(collection=>
+            <h1 className="text-center  font-light pb-16 text-17xl text-[#3C3C34]">items</h1>
+            <section className="flex flex-wrap justify-center ">
                 
-               ( <article className="relative w-[22vw] m-5" key={uuid()}>  
-                  <a role="button" href={`/collection/${collection._id }/edit `} className="absolute  right-0 block py-2 px-3 no-underline font-light bg-[#3C3C34] text-[#F5F5F5]">Edit</a>        
-
-                  <a href={`/collection/${collection._id}`}>
-                        <img className="h-[100%] w-[100%] " 
-                        src={collection.src} 
-                        alt={collection.name}/>               
-                        <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center ">
-                            <a role="button" href={`/collection/${collection._id }`} className=" block py-2 no-underline font-light text-[#F5F5F5]">{collection.name }</a>        
-                        </div>
-                      </a>
-                </article>)
-                 )}
-              </section>
-                </main>
-                <Footer/>
-        </div>
-    )
+            {items.items.map((item)=>
+(            <div key={uuid()} className="ProductCard w-60  m-5 h-72 p-5 bg-[#3C3C34] flex-col justify-start items-start inline-flex">
+              <div    className="FixedRatioImage  bg-center bg-cover  self-stretch h-[72%] flex-col justify-start items-start flex  w-full object-cover" style={{backgroundImage:`url(${item.src[1]} )` ,backgroundSize:`cover`,backgroundPosition: `center center`}}>
+              
+              </div>
+              <div className="ProductCardContent self-stretch h-20 py-3 flex-col justify-start items-start gap-3 flex">
+                <div className="Frame48095622 self-stretch h-8 flex-col justify-start items-start gap-2 flex">
+                  <p className="BrandCategory w-36 p-0 m-0 text-zinc-100 text-xs font-light uppercase leading-3 tracking-wider"></p>
+                  <p className="ProductName p-0 m-0 self-stretch text-stone-50 text-2xl font-bold">{item.name}</p>
+                </div>
+                <div className="ProductPrice justify-start items-start gap-2.5 inline-flex">
+                  <p className="Price p-0 m-0 text-stone-50 font-light leading-snug">{item.price}$</p>
+                </div>
+                <div className="flex self-stretch flex-col"> 
+                           <a role="button" href={`/item/${item._id }`} className=" self-end p-1.5 font-light text-[#3C3C34] no-underline bg-[#F5F5F5]">Shop now</a>        
+                </div>
+              </div>
+            </div>)
+            
+            ) }
+          </section>
+                </main>  
+<Footer/>
+</div>
+  )
 }
-export default Collection
+
+export default CollectionItems
