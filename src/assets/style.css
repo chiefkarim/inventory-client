@@ -248,9 +248,6 @@
 .w-screen {
     width: 100vw
 }
-.flex-auto {
-    flex: 1 1 auto
-}
 .grid-flow-row {
     grid-auto-flow: row
 }
