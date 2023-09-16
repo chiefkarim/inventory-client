@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Index from './pages/index.jsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import CollectionItems from './pages/collectionItems.jsx'
+import CollectionItems from './pages/collectionitems.jsx'
 import Item from './pages/item.jsx'
 import Collection from './pages/collection.jsx'
 const router = createBrowserRouter([
