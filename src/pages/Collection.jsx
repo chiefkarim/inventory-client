@@ -21,7 +21,7 @@ const collectionsList= ()=>{
     },[])
     return {collections,error,loading}
 }
-function Collection(){
+export default function Collection(){
     const {collections,error,loading} =collectionsList()
     if(error) return <h1>error</h1>
     if(loading) return <h1>loading</h1>
@@ -102,4 +102,3 @@ function Collection(){
         </div>
     )
 }
-export default Collection
