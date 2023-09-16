@@ -24,7 +24,7 @@ const collectionsList= ()=>{
 export default function Collection(){
     const {collections,error,loading} =collectionsList()
     if(error) return <h1>error</h1>
-    if(loading) return <h1>loading</h1>
+    if(loading) return <div className=" text-center"><h1>loading</h1></div>
     return(
         <div>
            <picture className="absolute  -z-20">

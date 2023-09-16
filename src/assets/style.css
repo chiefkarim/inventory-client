@@ -230,6 +230,9 @@
 .max-h-\[60vh\] {
     max-height: 60vh
 }
+.min-h-screen {
+    min-height: 100vh
+}
 .w-36 {
     width: 9rem
 }
@@ -247,6 +250,10 @@
 }
 .w-screen {
     width: 100vw
+}
+.w-fit {
+    width: -moz-fit-content;
+    width: fit-content
 }
 .grid-flow-row {
     grid-auto-flow: row
@@ -307,6 +314,9 @@
 }
 .gap-8 {
     gap: 2rem
+}
+.gap-10 {
+    gap: 2.5rem
 }
 .self-end {
     align-self: flex-end
@@ -413,6 +423,9 @@
 }
 .text-center {
     text-align: center
+}
+.align-text-bottom {
+    vertical-align: text-bottom
 }
 .font-helvetica-neue {
     font-family: 'Helvetica Neue'

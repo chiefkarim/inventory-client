@@ -26,7 +26,7 @@ function CollectionItems(){
     if(error){ 
         console.log(error)
         return <h1>error</h1>}
-    if(loading) return <h1>loading</h1>
+    if(loading) return <div className=" text-center"><h1>loading</h1></div>
     return(
 
      <div>

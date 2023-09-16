@@ -5,10 +5,19 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import CollectionItems from './pages/CollectionItems.jsx'
 import Item from './pages/Item.jsx'
 import Collection from './pages/Collection.jsx'
+import SingIn from './pages/Sing-in.jsx'
+import EditItem from './pages/EditItem.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
     element:<Index/>
+  },
+  {
+    path:'/log-in',
+    element:<SingIn/>
+  },{
+    path:'/edit-item',
+    element:<EditItem/>
   },
   {
     path:'/collection',
