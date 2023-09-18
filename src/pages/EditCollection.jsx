@@ -3,36 +3,37 @@ import { useEffect, useState } from "react"
 import {v4 as uuid}  from 'uuid'
 import Footer from "../components/Footer"
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useParams } from "react-router-dom"
+
 const getData= (method,setLoading,setError,setCollections)=>{
-  
+    const {id}=useParams()
     useEffect(()=>{
-        fetch('https://inventory-karim.fly.dev/item/create/api'
+        fetch(`http://localhost:3000/collection/${id}/api`
 ,        {headers:{Authorization:document.cookie,credentials:'include',method:method}}).then((data)=>{
            return data.json()    
         }).then((data)=>{
             setCollections(data)
-        }).catch(err=>        setError(err)        )
+        }).catch(err=>        { console.log(err)
+            setError(err) }       )
         .finally(()=>setLoading(false))
 
     
     },[])
 }
-
-
-export default function CreateCollection(){
+export default function EditCollection(){
   const [collections,setCollections ] = useState(null)
   const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+  getData('GET',setLoading,setError,setCollections)
   const navigate = useNavigate()
-
-    getData('GET',setLoading,setError,setCollections)
-    const [formState,setFormState] = useState({state:'',url:''})
+  const {id}=useParams()
+  const [formState,setFormState] = useState({state:'',url:''})
     function handelForm(e){
       setFormState({state:'Please wait while checking your information'})
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
       
-     fetch('https://inventory-karim.fly.dev/collection/create/api',
+     fetch(`http://localhost:3000/collection/${id}/edit/api`,
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
@@ -64,7 +65,7 @@ export default function CreateCollection(){
 <Nav/>
 <main className="px-28 py-14 ">
     <section >
-      {  typeof collections == 'object' && collections.item ?
+      {  typeof collections == 'object' && collections?.item ?
         
         <h1>{collections.item.name }</h1>
         : ''

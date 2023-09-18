@@ -32,7 +32,7 @@ export default function CreateItem(){
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
       
-     fetch('http://localhost:3000/item/create/api',
+     fetch('https://inventory-karim.fly.dev/item/create/api',
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})

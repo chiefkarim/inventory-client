@@ -9,7 +9,7 @@ const itemsList= ()=>{
     const [loading, setLoading] = useState(true)
     const {id}=useParams()
     useEffect(()=>{
-        fetch(`https://inventory-karim.fly.dev/collection/${id}/api`).then((data)=>{
+        fetch(`http://localhost:3000/collection/${id}/api`).then((data)=>{
            return data.json()    
         }).then((data)=>{
             setItems(data)
@@ -82,7 +82,7 @@ function CollectionItems(){
                 show your personality</h1>
             
             </section>
-            <h1 className="text-center  font-light pb-16 text-17xl text-[#3C3C34]">items</h1>
+            <h1 className="text-center  font-light pb-16 text-17xl text-[#3C3C34]">{items.title}</h1>
             <section className="flex flex-wrap justify-center ">
                 
             {items.items.map((item)=>

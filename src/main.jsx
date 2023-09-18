@@ -8,7 +8,7 @@ import Collection from './pages/Collection.jsx'
 import SingIn from './pages/Sing-in.jsx'
 import EditItem from './pages/CreateItem.jsx'
 import CreateCollection from './pages/CreateCollection.jsx'
-
+import EditCollection from './pages/EditCollection.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
   {
     path:'/collection/create',
     element:<CreateCollection/>
+  },
+  {
+    path:'/collection/:id/edit',
+    element:<EditCollection/>
   },
   {
     path:'/item/create',
