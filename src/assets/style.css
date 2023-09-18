@@ -176,6 +176,9 @@
     margin-top: 5rem;
     margin-bottom: 5rem
 }
+.mr-1 {
+    margin-right: 0.25rem
+}
 .mr-5 {
     margin-right: 1.25rem
 }
@@ -190,6 +193,9 @@
 }
 .inline-block {
     display: inline-block
+}
+.inline {
+    display: inline
 }
 .flex {
     display: flex
@@ -245,15 +251,15 @@
 .w-\[22vw\] {
     width: 22vw
 }
+.w-fit {
+    width: -moz-fit-content;
+    width: fit-content
+}
 .w-full {
     width: 100%
 }
 .w-screen {
     width: 100vw
-}
-.w-fit {
-    width: -moz-fit-content;
-    width: fit-content
 }
 .grid-flow-row {
     grid-auto-flow: row
@@ -300,6 +306,9 @@
 .justify-between {
     justify-content: space-between
 }
+.gap-10 {
+    gap: 2.5rem
+}
 .gap-2 {
     gap: 0.5rem
 }
@@ -315,9 +324,6 @@
 .gap-8 {
     gap: 2rem
 }
-.gap-10 {
-    gap: 2.5rem
-}
 .self-end {
     align-self: flex-end
 }
@@ -332,6 +338,18 @@
 }
 .whitespace-pre-line {
     white-space: pre-line
+}
+.border {
+    border-width: 1px
+}
+.border-s {
+    border-inline-start-width: 1px
+}
+.border-s-0 {
+    border-inline-start-width: 0px
+}
+.border-none {
+    border-style: none
 }
 .bg-\[\#3C3C34\] {
     --tw-bg-opacity: 1;
@@ -389,6 +407,10 @@
     padding-top: 0px;
     padding-bottom: 0px
 }
+.py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem
+}
 .py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem
@@ -423,9 +445,6 @@
 }
 .text-center {
     text-align: center
-}
-.align-text-bottom {
-    vertical-align: text-bottom
 }
 .font-helvetica-neue {
     font-family: 'Helvetica Neue'
