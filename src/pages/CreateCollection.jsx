@@ -19,7 +19,7 @@ const getData= (method,setLoading,setError,setCollections)=>{
 }
 
 
-export default function CreateItem(){
+export default function CreateCollection(){
   const [collections,setCollections ] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -32,7 +32,7 @@ export default function CreateItem(){
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
       
-     fetch('http://localhost:3000/item/create/api',
+     fetch('http://localhost:3000/collection/create/api',
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
@@ -43,9 +43,10 @@ export default function CreateItem(){
                   if(data.url){
                     setFormState((state)=>{return{...state,url:data.url}})
                   }else{
+                    console.log(data)
                     setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
-      .catch(err=>     {  console.log(err)
+      .catch(err=>     {  console.log('err',err)
          setFormState((state)=>{return{...state,errors:err}})}        )
       .finally(()=>{        
       })
@@ -73,26 +74,14 @@ export default function CreateItem(){
         <label> Name:        
             <input type="text" name="name"  max="100" />
         </label>
-        <label> price:        
-          <input type="number" name="price" min="3" max="100"/>
-      </label>
-      <label> quantity:        
-        <input type="number" name="stock" min="0" />
-    </label>
-    <label>
-        collection
-    <select name="category">
-      {   collections.collections.map(collection=>
-(<option key={uuid()} value={collection.name}>{ collection.name} </option>)
-       ) 
-    }
-    </select>
-</label>
+      
+    
+
     <label> Description:        
 <textarea name="description" id="" cols="30" rows="10"></textarea>     
 </label>
     <label> photos:        
-      <input className="" type="file" name="src" accept="image/*" multiple/>
+      <input className="" type="file" name="src" accept="image/*" />
   </label>
         <div>
        <button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Submit</button>
