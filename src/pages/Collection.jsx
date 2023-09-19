@@ -13,7 +13,6 @@ const collectionsList= ()=>{
            return data.json()    
         }).then((data)=>{
             setCollection(data)
-            console.log('data',data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
 

@@ -13,7 +13,6 @@ const itemsList= ()=>{
            return data.json()    
         }).then((data)=>{
             setItems(data)
-            console.log('data',data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
 

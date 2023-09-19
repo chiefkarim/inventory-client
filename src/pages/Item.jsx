@@ -13,7 +13,6 @@ const itemDetails= ()=>{
            return data.json()    
         }).then((data)=>{
             setItem(data)
-            console.log('data',data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
 
@@ -42,9 +41,9 @@ preview.style.opacity=1
     <main className="px-28 ">
         <section className="grid grid-cols-3 grid-rows-4 gap-5 my-[5rem] h-[60vh]">
             <section className="previewImages stretch w-full h-full grid grid-cols-3 grid-rows-3 col-span-2 row-span-4 gap-5">
-                <img id="a" onClick={(event)=>{changePreview(event)}} className="col-start-1  col-end-1 h-full w-full" src={item.item.src[0]}/>
-                <img id="b" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-2 row-end-2 h-full w-full " src={item.item.src[1]}/>
-                <img id="c" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-3 row-end-3 h-full w-full" src={item.item.src[2]}/>
+                <img id="a" onClick={(event)=>{changePreview(event)}} className="col-start-1  col-end-1 h-full w-full" src={item.item.src[0].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
+                <img id="b" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-2 row-end-2 h-full w-full " src={item.item.src[1].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
+                <img id="c" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-3 row-end-3 h-full w-full" src={item.item.src[2].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
                 <img id="preview"  className="h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[3s]" src={item.item.src[0]} />
             </section>
         

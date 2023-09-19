@@ -59,7 +59,7 @@ export default function CollectionControls({action}){
                     setFormState((state)=>{return{...state,url:data.url}})
                   }else{
                     console.log(data)
-                    setFormState((state)=>{return{...state,errors:[data.errors]}})
+                    setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
       .catch(err=>     {  console.log('err',err)
          setFormState((state)=>{return{...state,errors:[err]}})}        )
@@ -100,7 +100,7 @@ export default function CollectionControls({action}){
   </label>
         <div>
        <button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Submit</button>
-       {formState != null ? typeof formState?.errors == 'object' ? 
+       {formState != null ? typeof formState.errors == 'object' ? 
        formState.errors.map((error)=>(<p key={uuid}>{ error.msg}</p>))
           : (<h1>{formState.state}</h1>) : ''}
 </div>

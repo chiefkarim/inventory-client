@@ -8,7 +8,6 @@ export default function Nav(){
 <a role="button" href="/collection/create/" className=" px-6 py-6  no-underline text-[#F5F5F5]">create collection</a>        
 </div  >
 <div className="py-6">
-    <a  role="button" href="/sign-up" className="text-5xl px-6    no-underline text-[#F5F5F5]  ">Sign up</a>
     <a  role="button" href="/log-in" className="text-5xl     no-underline text-[#F5F5F5]  ">Log in</a>    
      
 </div>
