@@ -336,8 +336,17 @@
 .overflow-auto {
     overflow: auto
 }
+.overflow-scroll {
+    overflow: scroll
+}
+.text-ellipsis {
+    text-overflow: ellipsis
+}
 .whitespace-pre-line {
     white-space: pre-line
+}
+.break-words {
+    overflow-wrap: break-word
 }
 .border-none {
     border-style: none

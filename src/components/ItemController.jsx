@@ -35,11 +35,13 @@ export default function ItemController({action}){
   const navigate = useNavigate()
   const {id} = useParams()
   const [formState,setFormState] = useState({state:'',url:''})
-
+  
   getData('GET',setLoading,setError,setCollections,id)
-  function handelForm(e){
-      let url=''
-        if(id){
+  function handelForm(e,deleted){
+  let url=''
+    if(deleted === 'delete'){
+      url=`https://inventory-karim.fly.dev/item/${id}/delete/api`
+    }else if(id){
           url= `https://inventory-karim.fly.dev/item/${id}/edit/api`
         }else {url='https://inventory-karim.fly.dev/item/create/api'}
 
@@ -62,7 +64,10 @@ export default function ItemController({action}){
                   }})
       .catch(err=>     {  console.log(err)
          setFormState((state)=>{return{...state,errors:err}})}        )
-      .finally(()=>{        
+      .finally(()=>{  
+        if(deleted == 'delete'){
+          navigate('/')
+        }      
       })
     }
     useEffect(() => {
@@ -115,6 +120,10 @@ export default function ItemController({action}){
        formState.errors.map((error)=>(<p key={uuid}>{ error.msg}</p>))
           : (<h1>{formState.state}</h1>) : ''}
 </div>
+</form>
+<form onSubmit={(e)=>{handelForm(e,'delete')}}>
+<button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Delete</button>
+
 </form>
     </section>
 </main>

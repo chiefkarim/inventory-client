@@ -12,6 +12,7 @@ const itemDetails= ()=>{
         fetch(`https://inventory-karim.fly.dev/item/${id}/api`).then((data)=>{
            return data.json()    
         }).then((data)=>{
+            console.log(data)
             setItem(data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
@@ -50,7 +51,7 @@ preview.style.opacity=1
 <section className="flex flex-col ">
 <h1 className="m-0 text-13xl font-light">{ item.item.name}</h1>
 <p>{item.item.price}$</p>
-<p className="overflow-auto">
+<p className="  break-words">
 {item.item.description }
 </p>
 </section>

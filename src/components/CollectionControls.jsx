@@ -38,13 +38,15 @@ export default function CollectionControls({action}){
   
   getData('GET',setLoading,setError,setCollections,id || null)
 
-    function handelForm(e){
+    function handelForm(e,deleted){
       setFormState({state:'Please wait while checking your information'})
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
       
       let url=''
-        if(action == 'edit'){
+      if(deleted === 'delete'){
+        url=`https://inventory-karim.fly.dev/collection/${id}/delete/api`
+      }else if(action == 'edit'){
           url= `https://inventory-karim.fly.dev/collection/${id}/edit/api`
         }else if(action == 'create') {url='https://inventory-karim.fly.dev/collection/create/api'}
      fetch(url,
@@ -63,7 +65,10 @@ export default function CollectionControls({action}){
                   }})
       .catch(err=>     {  console.log('err',err)
          setFormState((state)=>{return{...state,errors:[err]}})}        )
-      .finally(()=>{        
+      .finally(()=>{  
+        if(deleted == 'delete'){
+          navigate('/collection')
+        }          
       })
     }
     useEffect(() => {
@@ -104,6 +109,10 @@ export default function CollectionControls({action}){
        formState.errors.map((error)=>(<p key={uuid}>{ error.msg}</p>))
           : (<h1>{formState.state}</h1>) : ''}
 </div>
+</form>
+<form onSubmit={(e)=>{handelForm(e,'delete')}}>
+<button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Delete</button>
+
 </form>
     </section>
 </main>
