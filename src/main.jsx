@@ -6,7 +6,6 @@ import CollectionItems from './pages/CollectionItems.jsx'
 import Item from './pages/Item.jsx'
 import Collection from './pages/Collection.jsx'
 import SingIn from './pages/Sing-in.jsx'
-import CreateItem from './pages/CreateItem.jsx'
 import CollectionControls from './components/CollectionControls.jsx'
 import ItemController from './components/ItemController.jsx'
 

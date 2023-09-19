@@ -9,9 +9,9 @@ const getData= (method,setLoading,setError,setCollections,id)=>{
   let url=''
 
   if(id){
-url=`http://localhost:3000/item/${id}/edit/api`
+url=`https://inventory-karim.fly.dev/item/${id}/edit/api`
   }else{
-url='http://localhost:3000/collection/api'
+url='https://inventory-karim.fly.dev/collection/api'
   }
     useEffect(()=>{
         fetch(url
@@ -40,8 +40,8 @@ export default function ItemController({action}){
   function handelForm(e){
       let url=''
         if(id){
-          url= `http://localhost:3000/item/${id}/edit/api`
-        }else {url='http://localhost:3000/item/create/api'}
+          url= `https://inventory-karim.fly.dev/item/${id}/edit/api`
+        }else {url='https://inventory-karim.fly.dev/item/create/api'}
 
       setFormState({state:'Please wait while checking your information'})
       e.preventDefault()
