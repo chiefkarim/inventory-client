@@ -339,15 +339,6 @@
 .whitespace-pre-line {
     white-space: pre-line
 }
-.border {
-    border-width: 1px
-}
-.border-s {
-    border-inline-start-width: 1px
-}
-.border-s-0 {
-    border-inline-start-width: 0px
-}
 .border-none {
     border-style: none
 }

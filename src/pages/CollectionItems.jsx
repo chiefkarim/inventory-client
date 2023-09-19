@@ -9,7 +9,7 @@ const itemsList= ()=>{
     const [loading, setLoading] = useState(true)
     const {id}=useParams()
     useEffect(()=>{
-        fetch(`http://localhost:3000/collection/${id}/api`).then((data)=>{
+        fetch(`https://inventory-karim.fly.dev/collection/${id}/api`).then((data)=>{
            return data.json()    
         }).then((data)=>{
             setItems(data)

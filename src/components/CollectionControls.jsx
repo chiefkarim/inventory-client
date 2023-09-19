@@ -1,17 +1,26 @@
-import Nav from "../components/Nav"
+import Nav from "./Nav"
 import { useEffect, useState } from "react"
 import {v4 as uuid}  from 'uuid'
-import Footer from "../components/Footer"
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-const getData= (method,setLoading,setError,setCollections)=>{
-  
+import Footer from "./Footer"
+import { useNavigate } from 'react-router-dom'; 
+import { useParams } from "react-router-dom"
+
+const getData= (method,setLoading,setError,setCollections,id)=>{
+  let url=''
+  if(id){
+url=`https://inventory-karim.fly.dev/collection/${id}/api`
+  }else{
+    //chnage this to show collection name
+url='https://inventory-karim.fly.dev/item/create/api'
+  }
     useEffect(()=>{
-        fetch('https://inventory-karim.fly.dev/item/create/api'
+        fetch(url
 ,        {headers:{Authorization:document.cookie,credentials:'include',method:method}}).then((data)=>{
            return data.json()    
         }).then((data)=>{
             setCollections(data)
-        }).catch(err=>        setError(err)        )
+        }).catch(err=>        {console.log(err)
+          setError(err)}        )
         .finally(()=>setLoading(false))
 
     
@@ -19,20 +28,26 @@ const getData= (method,setLoading,setError,setCollections)=>{
 }
 
 
-export default function CreateCollection(){
+export default function CollectionControls({action}){
   const [collections,setCollections ] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
+  const {id} = useParams()
+  const [formState,setFormState] = useState({state:'',url:''})
+  
+  getData('GET',setLoading,setError,setCollections,id || null)
 
-    getData('GET',setLoading,setError,setCollections)
-    const [formState,setFormState] = useState({state:'',url:''})
     function handelForm(e){
       setFormState({state:'Please wait while checking your information'})
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
       
-     fetch('https://inventory-karim.fly.dev/collection/create/api',
+      let url=''
+        if(action == 'edit'){
+          url= `https://inventory-karim.fly.dev/collection/${id}/edit/api`
+        }else if(action == 'create') {url='https://inventory-karim.fly.dev/collection/create/api'}
+     fetch(url,
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
@@ -44,10 +59,10 @@ export default function CreateCollection(){
                     setFormState((state)=>{return{...state,url:data.url}})
                   }else{
                     console.log(data)
-                    setFormState((state)=>{return{...state,errors:data.errors}})
+                    setFormState((state)=>{return{...state,errors:[data.errors]}})
                   }})
       .catch(err=>     {  console.log('err',err)
-         setFormState((state)=>{return{...state,errors:err}})}        )
+         setFormState((state)=>{return{...state,errors:[err]}})}        )
       .finally(()=>{        
       })
     }

@@ -56,7 +56,7 @@ preview.style.opacity=1
 </p>
 </section>
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
-<a role="button" href={`${item.item.url }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</a>        
+<a role="button" href={`${item.item._id }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</a>        
 </section>
         </section>
 

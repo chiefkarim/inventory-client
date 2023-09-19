@@ -6,9 +6,10 @@ import CollectionItems from './pages/CollectionItems.jsx'
 import Item from './pages/Item.jsx'
 import Collection from './pages/Collection.jsx'
 import SingIn from './pages/Sing-in.jsx'
-import EditItem from './pages/CreateItem.jsx'
-import CreateCollection from './pages/CreateCollection.jsx'
-import EditCollection from './pages/EditCollection.jsx'
+import CreateItem from './pages/CreateItem.jsx'
+import CollectionControls from './components/CollectionControls.jsx'
+import ItemController from './components/ItemController.jsx'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,16 +21,13 @@ const router = createBrowserRouter([
   },
   {
     path:'/collection/create',
-    element:<CreateCollection/>
+    element:<CollectionControls action='create'/>
   },
   {
     path:'/collection/:id/edit',
-    element:<EditCollection/>
+    element:<CollectionControls action='edit'/>
   },
-  {
-    path:'/item/create',
-    element:<EditItem/>
-  },
+  
   {
     path:'/collection',
     element:<Collection/>
@@ -37,7 +35,17 @@ const router = createBrowserRouter([
   {
     path:'/collection/:id',
     element:<CollectionItems/>
-  },{
+  },
+  {
+    path:'/item/create',
+    element:<ItemController action='create'/>
+  },
+  {
+    path:'/item/:id/edit',
+    element:<ItemController action='edit'/>
+  }
+  ,
+  {
     path:'/item/:id',
     element:<Item/>
   }

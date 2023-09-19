@@ -1,39 +1,53 @@
-import Nav from "../components/Nav"
+import Nav from "./Nav"
 import { useEffect, useState } from "react"
 import {v4 as uuid}  from 'uuid'
-import Footer from "../components/Footer"
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { useParams } from "react-router-dom"
+import Footer from "./Footer"
+import { useNavigate } from 'react-router-dom'; 
+import { useParams } from "react-router-dom";
 
-const getData= (method,setLoading,setError,setCollections)=>{
-    const {id}=useParams()
+const getData= (method,setLoading,setError,setCollections,id)=>{
+  let url=''
+
+  if(id){
+url=`http://localhost:3000/item/${id}/edit/api`
+  }else{
+url='http://localhost:3000/collection/api'
+  }
     useEffect(()=>{
-        fetch(`http://localhost:3000/collection/${id}/api`
+        fetch(url
 ,        {headers:{Authorization:document.cookie,credentials:'include',method:method}}).then((data)=>{
            return data.json()    
         }).then((data)=>{
+          console.log(data)
             setCollections(data)
-        }).catch(err=>        { console.log(err)
-            setError(err) }       )
+        }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
 
     
     },[])
 }
-export default function EditCollection(){
+
+
+export default function ItemController({action}){
   const [collections,setCollections ] = useState(null)
   const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(false)
-  getData('GET',setLoading,setError,setCollections)
+  const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
-  const {id}=useParams()
+  const {id} = useParams()
   const [formState,setFormState] = useState({state:'',url:''})
-    function handelForm(e){
+
+  getData('GET',setLoading,setError,setCollections,id)
+  function handelForm(e){
+      let url=''
+        if(id){
+          url= `http://localhost:3000/item/${id}/edit/api`
+        }else {url='http://localhost:3000/item/create/api'}
+
       setFormState({state:'Please wait while checking your information'})
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
       
-     fetch(`http://localhost:3000/collection/${id}/edit/api`,
+     fetch(url,
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
@@ -44,11 +58,10 @@ export default function EditCollection(){
                   if(data.url){
                     setFormState((state)=>{return{...state,url:data.url}})
                   }else{
-                    console.log(data)
                     setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
-      .catch(err=>     {  console.log('err',err)
-         setFormState((state)=>{return{...state,errors:err}})}        )
+      .catch(err=>     {  console.log(err)
+         setFormState((state)=>{return{...state,errors:[err]}})}        )
       .finally(()=>{        
       })
     }
@@ -65,7 +78,7 @@ export default function EditCollection(){
 <Nav/>
 <main className="px-28 py-14 ">
     <section >
-      {  typeof collections == 'object' && collections?.item ?
+      {  typeof collections == 'object' && collections.item ?
         
         <h1>{collections.item.name }</h1>
         : ''
@@ -75,14 +88,26 @@ export default function EditCollection(){
         <label> Name:        
             <input type="text" name="name"  max="100" />
         </label>
-      
-    
-
+        <label> price:        
+          <input type="number" name="price" min="3" max="100"/>
+      </label>
+      <label> quantity:        
+        <input type="number" name="stock" min="0" />
+    </label>
+    <label>
+        collection
+    <select name="category">
+      {   collections.collections.map(collection=>
+(<option key={uuid()} value={collection.name}>{ collection.name} </option>)
+       ) 
+    }
+    </select>
+</label>
     <label> Description:        
 <textarea name="description" id="" cols="30" rows="10"></textarea>     
 </label>
     <label> photos:        
-      <input className="" type="file" name="src" accept="image/*" />
+      <input className="" type="file" name="src" accept="image/*" multiple/>
   </label>
         <div>
        <button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Submit</button>
@@ -96,3 +121,5 @@ export default function EditCollection(){
 <Footer/>
     </div>)
 }
+
+//add proptypes 'action' to avoid wrong usage 
