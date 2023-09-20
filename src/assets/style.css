@@ -293,6 +293,21 @@
 .h-\[90vh\] {
     height: 90vh
 }
+.h-\[5vh\] {
+    height: 5vh
+}
+.h-\[50vh\] {
+    height: 50vh
+}
+.h-\[\] {
+    height: 
+}
+.h-\[70vh\] {
+    height: 70vh
+}
+.h-\[40vh\] {
+    height: 40vh
+}
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -329,6 +344,21 @@
 }
 .w-\[30px\] {
     width: 30px
+}
+.w-\[50v2\] {
+    width: 50v2
+}
+.w-\[60vw\] {
+    width: 60vw
+}
+.w-\[70vw\] {
+    width: 70vw
+}
+.w-\[80vw\] {
+    width: 80vw
+}
+.w-\[0vw\] {
+    width: 0vw
 }
 .min-w-full {
     min-width: 100%
@@ -738,6 +768,15 @@
     .sm\:hidden {
         display: none
     }
+    .sm\:h-\[100vh\] {
+        height: 100vh
+    }
+    .sm\:h-\[85vh\] {
+        height: 85vh
+    }
+    .sm\:h-full {
+        height: 100%
+    }
     .sm\:w-fit {
         width: -moz-fit-content;
         width: fit-content
@@ -753,6 +792,9 @@
     }
     .sm\:w-auto {
         width: auto
+    }
+    .sm\:w-\[22vw\] {
+        width: 22vw
     }
     .sm\:min-w-fit {
         min-width: -moz-fit-content;
@@ -838,6 +880,9 @@
     }
     .sm\:text-13xl {
         font-size: 2rem
+    }
+    .sm\:text-29xl {
+        font-size: 3rem
     }
     .sm\:font-thin {
         font-weight: 100

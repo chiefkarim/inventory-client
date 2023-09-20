@@ -41,7 +41,7 @@ export default function Collection(){
       srcSet="
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_4_3,c_fill,g_auto__c_scale,w_538.jpg 538w,
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_ar_4_3,c_fill,g_auto__c_scale,w_694.jpg 694w"/>
-      <img className="w-screen h-[100vh]"
+      <img className="w-screen sm:h-[100vh]"
       sizes="(max-width: 3500px) 40vw, 1400px"
       srcSet="
       ../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_c_scale,w_397.jpg 397w,
@@ -66,14 +66,14 @@ export default function Collection(){
       </picture>
   
 <Nav/>
-        <main className="px-28">
+        <main className="sm:px-28 px-3">
 
 
 
 
         
-            <section className="h-[85vh] ">
-               <h1 className="text-29xl py-16 text-[#3B3B3B] ">build your wardrobe with the  basics
+            <section className="sm:h-[85vh] ">
+               <h1 className="sm:text-29xl py-16 text-[#3B3B3B] sm:text-center">build your wardrobe with the  basics
                 and start mixing and matching
                 show your personality</h1>
             
@@ -82,11 +82,11 @@ export default function Collection(){
               <section className="flex flex-wrap justify-center">
                 {  collections.collections.map(collection=>
                 
-               ( <article className="relative w-[22vw] m-5" key={uuid()}>  
+               ( <article className="relative sm:w-[22vw] m-5" key={uuid()}>  
                   <a role="button" href={`/collection/${collection._id }/edit `} className="absolute  right-0 block py-2 px-3 no-underline font-light bg-[#3C3C34] text-[#F5F5F5]">Edit</a>        
 
                   <a href={`/collection/${collection._id}`}>
-                        <img className="h-[100%] w-[100%] " 
+                        <img className="sm:h-full sm:w-full h-[40vh] w-[60vw] " 
                         src={collection.src} 
                         alt={collection.name}/>               
                         <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center ">
