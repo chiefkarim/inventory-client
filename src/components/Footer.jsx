@@ -1,8 +1,8 @@
 export default function Footer(){
-  return(<footer className="mt-20 py-5 bg-[#3C3C34] w-full flex flex-row justify-between self-baseline">
-  <section className="pl-28  text-[#f5f5f5] ">
-    <h2 className="font-thin ">ABOUT THE SHOP</h2>
-    <p className="whitespace-pre-line">
+  return(<footer className=" mt-20 py-5 bg-[#3C3C34] w-full flex flex-row justify-between self-baseline">
+  <section className="px-3 sm:pl-28  text-[#f5f5f5] ">
+    <h2 className="text-[1.5rem] font-light  ">About the shop</h2>
+    <p className="whitespace-pre-line  ">
       The story of Leo and Violette, it&apos;s ours.We are Léo Dominguez & Violette
       Polchi. Two Parisian lovers sharing our lives for more than 8 years. Since
       the early days of our meeting, we always had the dream to develop a
@@ -10,8 +10,8 @@ export default function Footer(){
       use their products in this demo store
     </p>
   </section>
-  <section className="pr-28 text-[#f5f5f5]  ">
-    <h2 className="font-thin">CONTACT US</h2>
+  <section className="px-3 sm:pr-28 text-[#f5f5f5]  ">
+    <h2 className="text-[1.5rem] font-light ">Contact</h2>
     <a
       role="button"
       href="/"

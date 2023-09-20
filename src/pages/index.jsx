@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 export default function Index(){
 
     return(
-    <div >
+    < >
     
     <picture className="absolute h-[100vh]  w-screen -z-20  ">
         <img className="h-[100vh] w-screen"
@@ -36,9 +36,9 @@ export default function Index(){
         </picture>
         <Nav />
 
-    <main className="px-28">
+    <main className="sm:px-28 px-3">
         <section className="h-[100vh] ">
-           <h1 className="text-13xl py-16 text-[#f5f5f5] ">Fashion is a statement<br/>
+           <h1 className="sm:text-13xl py-8 text-[1.5rem] w-[50vw] sm:py-16 text-[#f5f5f5] ">Fashion is a statement<br/>
             make sure you say the right thing</h1>
             <a role="button" href="/collection/" className=" px-6 hover:bg-[#F5F5F5] hover:text-[#3C3C34] py-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</a>        
         
@@ -132,6 +132,6 @@ export default function Index(){
             </main>
             <Footer/>
 
-</div>)
+</>)
 
 }
