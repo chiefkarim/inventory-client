@@ -159,6 +159,90 @@
 .top-0 {
     top: 0px
 }
+.right-10 {
+    right: 2.5rem
+}
+.left-10 {
+    left: 2.5rem
+}
+.left-24 {
+    left: 6rem
+}
+.top-4 {
+    top: 1rem
+}
+.-top-4 {
+    top: -1rem
+}
+.bottom-4 {
+    bottom: 1rem
+}
+.-bottom-4 {
+    bottom: -1rem
+}
+.bottom-5 {
+    bottom: 1.25rem
+}
+.bottom-2 {
+    bottom: 0.5rem
+}
+.bottom-1 {
+    bottom: 0.25rem
+}
+.-bottom-1 {
+    bottom: -0.25rem
+}
+.-bottom-0 {
+    bottom: -0px
+}
+.-bottom-7 {
+    bottom: -1.75rem
+}
+.left-5 {
+    left: 1.25rem
+}
+.left-20 {
+    left: 5rem
+}
+.top-10 {
+    top: 2.5rem
+}
+.-top-10 {
+    top: -2.5rem
+}
+.-top-12 {
+    top: -3rem
+}
+.-top-14 {
+    top: -3.5rem
+}
+.-top-16 {
+    top: -4rem
+}
+.-top-\[15\] {
+    top: -15
+}
+.-top-\[15px\] {
+    top: -15px
+}
+.-top-\[15rem\] {
+    top: -15rem
+}
+.-top-\[1rem\] {
+    top: -1rem
+}
+.-top-\[2rem\] {
+    top: -2rem
+}
+.-top-\[3rem\] {
+    top: -3rem
+}
+.-top-\[3\.1rem\] {
+    top: -3.1rem
+}
+.-top-\[3\.2rem\] {
+    top: -3.2rem
+}
 .-z-20 {
     z-index: -20
 }
@@ -218,6 +302,18 @@
     margin-top: 5rem;
     margin-bottom: 5rem
 }
+.my-16 {
+    margin-top: 4rem;
+    margin-bottom: 4rem
+}
+.my-28 {
+    margin-top: 7rem;
+    margin-bottom: 7rem
+}
+.my-5 {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem
+}
 .mr-1 {
     margin-right: 0.25rem
 }
@@ -229,6 +325,12 @@
 }
 .mt-6 {
     margin-top: 1.5rem
+}
+.mt-\[5rem\] {
+    margin-top: 5rem
+}
+.mt-\[10rem\] {
+    margin-top: 10rem
 }
 .block {
     display: block
@@ -394,6 +496,9 @@
     min-width: -moz-fit-content;
     min-width: fit-content
 }
+.flex-auto {
+    flex: 1 1 auto
+}
 .flex-grow {
     flex-grow: 1
 }
@@ -436,11 +541,17 @@
 .items-start {
     align-items: flex-start
 }
+.items-end {
+    align-items: flex-end
+}
 .items-center {
     align-items: center
 }
 .justify-start {
     justify-content: flex-start
+}
+.justify-end {
+    justify-content: flex-end
 }
 .justify-center {
     justify-content: center
@@ -546,6 +657,9 @@
 .p-2 {
     padding: 0.5rem
 }
+.p-4 {
+    padding: 1rem
+}
 .px-28 {
     padding-left: 7rem;
     padding-right: 7rem
@@ -646,6 +760,15 @@
 .pb-10 {
     padding-bottom: 2.5rem
 }
+.pt-\[\] {
+    padding-top: 
+}
+.pt-\[5rem\] {
+    padding-top: 5rem
+}
+.pt-\[10rem\] {
+    padding-top: 10rem
+}
 .text-left {
     text-align: left
 }
@@ -660,6 +783,9 @@
 }
 .align-middle {
     vertical-align: middle
+}
+.align-bottom {
+    vertical-align: bottom
 }
 .align-\[\] {
     vertical-align: 
@@ -798,6 +924,13 @@
     .sm\:top-0 {
         top: 0px
     }
+    .sm\:my-10 {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem
+    }
+    .sm\:block {
+        display: block
+    }
     .sm\:flex {
         display: flex
     }
@@ -872,6 +1005,9 @@
     .sm\:p-5 {
         padding: 1.25rem
     }
+    .sm\:p-3 {
+        padding: 0.75rem
+    }
     .sm\:px-28 {
         padding-left: 7rem;
         padding-right: 7rem
@@ -907,6 +1043,10 @@
     .sm\:px-6 {
         padding-left: 1.5rem;
         padding-right: 1.5rem
+    }
+    .sm\:py-14 {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem
     }
     .sm\:pl-28 {
         padding-left: 7rem

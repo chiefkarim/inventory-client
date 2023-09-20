@@ -82,7 +82,7 @@ export default function CollectionControls({action}){
     return(<div>
 
 <Nav/>
-<main className="px-28 py-14 ">
+<main className="sm:px-28 sm:py-14 px-3 pt-[5rem] ">
     <section >
       {  typeof collections == 'object' && collections.item ?
         
@@ -110,7 +110,7 @@ export default function CollectionControls({action}){
           : (<h1>{formState.state}</h1>) : ''}
 </div>
 </form>
-<form onSubmit={(e)=>{handelForm(e,'delete')}}>
+<form className="relative left-20 -top-[3.2rem]" onSubmit={(e)=>{handelForm(e,'delete')}}>
 <button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Delete</button>
 
 </form>

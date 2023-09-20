@@ -31,11 +31,11 @@ export default function SingIn(){
     return(<div  className="m-0 min-h-screen flex flex-col  justify-between tracking-widest bg-[#D7CEB2] font-thin font-helvetica-neue ">
 
 <Nav/>
-<main className="px-28 my-10 ">
-    <section >
+<main className="sm:px-28 px-3 sm:my-10 mt-[10rem]  ">
+    <section className="  w-full flex justify-center align-bottom">
       
-        <form className="grid gap-10 " action="" method="post" >
-          <label>
+        <form className=" grid-center font-normal grid gap-10 " action="" method="post" >
+          <label >
             Username:
             <input type="text" name="username"/>
           </label>
@@ -54,7 +54,7 @@ export default function SingIn(){
     )) : ''
         }
       
-  <button type="button" onClick={authData} className="w-fit">Log in</button>
+  <button type="button" onClick={authData} className="w-fit p-2    hover:bg-[#F5F5F5] hover:text-[#3C3C34] sm:p-3  no-underline bg-[#3C3C34] text-[#F5F5F5]">Log in</button>
 </form>
 
     </section>

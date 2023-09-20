@@ -45,7 +45,7 @@ preview.style.opacity=1
                 <img id="a" onClick={(event)=>{changePreview(event)}} className="col-start-1  col-end-1 h-[70%] sm:h-full w-full" src={item.item.src[0].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
                 <img id="b" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-2 h-[70%] row-end-2 sm:h-full w-full " src={item.item.src[1].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
                 <img id="c" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-3 h-[70%] row-end-3 sm:h-full w-full" src={item.item.src[2].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
-                <img id="preview"  className="hidden sm:static h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[3s]" src={item.item.src[0]} />
+                <img id="preview"  className="hidden sm:block h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[3s]" src={item.item.src[0]} />
             </section>
         
 <section className="flex flex-col ">
