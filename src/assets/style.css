@@ -284,6 +284,15 @@
 .h-\[3px\] {
     height: 3px
 }
+.h-\[80vh\] {
+    height: 80vh
+}
+.h-\[vh\] {
+    height: vh
+}
+.h-\[90vh\] {
+    height: 90vh
+}
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -535,6 +544,18 @@
     padding-top: 0.625rem;
     padding-bottom: 0.625rem
 }
+.py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem
+}
+.py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem
+}
+.py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem
+}
 .pb-12 {
     padding-bottom: 3rem
 }
@@ -552,6 +573,12 @@
 }
 .pr-3 {
     padding-right: 0.75rem
+}
+.pt-32 {
+    padding-top: 8rem
+}
+.pb-10 {
+    padding-bottom: 2.5rem
 }
 .text-left {
     text-align: left
@@ -746,6 +773,12 @@
     .sm\:p-6 {
         padding: 1.5rem
     }
+    .sm\:p-16 {
+        padding: 4rem
+    }
+    .sm\:p-5 {
+        padding: 1.25rem
+    }
     .sm\:px-28 {
         padding-left: 7rem;
         padding-right: 7rem
@@ -774,11 +807,22 @@
         padding-top: 0.625rem;
         padding-bottom: 0.625rem
     }
+    .sm\:py-5 {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem
+    }
+    .sm\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+    }
     .sm\:pl-28 {
         padding-left: 7rem
     }
     .sm\:pr-28 {
         padding-right: 7rem
+    }
+    .sm\:pt-16 {
+        padding-top: 4rem
     }
     .sm\:text-left {
         text-align: left

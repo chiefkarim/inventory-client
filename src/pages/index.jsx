@@ -5,7 +5,7 @@ export default function Index(){
     return(
     < >
     
-    <picture className="absolute h-[100vh]  w-screen -z-20  ">
+    <picture className="absolute h-[80vh]  w-screen -z-20  ">
         <img className="h-[100vh] w-screen"
         sizes="(max-width: 1400px) 100vw, 1400px"
         srcSet="
@@ -24,7 +24,7 @@ export default function Index(){
         ../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_1400.jpg 1400w"
         src="../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_1400.jpg"
         alt=""/>
-        <div className="relative -top-28 "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1512 164" fill="none">
+        <div className="relative -top-28 "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1512 1000" fill="none">
             <rect width="1512" height="100%" fill="url(#paint0_linear_14_6)"/>
             <defs>
             <linearGradient id="paint0_linear_14_6" x1="756" y1="0" x2="756" y2="164" gradientUnits="userSpaceOnUse">
@@ -38,9 +38,9 @@ export default function Index(){
 
     <main className="sm:px-28 px-3">
         <section className="h-[100vh] ">
-           <h1 className="sm:text-13xl py-8 text-[1.5rem] w-[50vw] sm:py-16 text-[#f5f5f5] ">Fashion is a statement<br/>
+           <h1 className="sm:text-13xl font-normal text-[1.5rem] w-[50vw] pt-32 pb-10 sm:py-16 text-[#f5f5f5] ">Fashion is a statement <br className='hidden sm:flex'/>
             make sure you say the right thing</h1>
-            <a role="button" href="/collection/" className=" px-6 hover:bg-[#F5F5F5] hover:text-[#3C3C34] py-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</a>        
+            <a role="button" href="/collection/" className="p-3   hover:bg-[#F5F5F5] hover:text-[#3C3C34] sm:p-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</a>        
         
         </section>
         <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
