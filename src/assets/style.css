@@ -308,6 +308,33 @@
 .h-\[40vh\] {
     height: 40vh
 }
+.h-\[30vh\] {
+    height: 30vh
+}
+.h-\[80\] {
+    height: 80
+}
+.h-\[80\$\] {
+    height: 80$
+}
+.h-\[80\@\] {
+    height: 80@
+}
+.h-\[80\%\] {
+    height: 80%
+}
+.h-\[50\%\] {
+    height: 50%
+}
+.h-\[60\%\] {
+    height: 60%
+}
+.h-\[70\%\] {
+    height: 70%
+}
+.h-\[0\%\] {
+    height: 0%
+}
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -382,6 +409,9 @@
 .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr))
 }
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+}
 .grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr))
 }
@@ -390,6 +420,9 @@
 }
 .grid-rows-4 {
     grid-template-rows: repeat(4, minmax(0, 1fr))
+}
+.grid-rows-5 {
+    grid-template-rows: repeat(5, minmax(0, 1fr))
 }
 .flex-row {
     flex-direction: row
@@ -441,6 +474,9 @@
 }
 .self-baseline {
     align-self: baseline
+}
+.overflow-scroll {
+    overflow: scroll
 }
 .whitespace-pre-line {
     white-space: pre-line
@@ -765,6 +801,9 @@
     .sm\:flex {
         display: flex
     }
+    .sm\:grid {
+        display: grid
+    }
     .sm\:hidden {
         display: none
     }
@@ -776,6 +815,12 @@
     }
     .sm\:h-full {
         height: 100%
+    }
+    .sm\:h-\[60vh\] {
+        height: 60vh
+    }
+    .sm\:max-h-\[60vh\] {
+        max-height: 60vh
     }
     .sm\:w-fit {
         width: -moz-fit-content;
@@ -802,6 +847,12 @@
     }
     .sm\:min-w-full {
         min-width: 100%
+    }
+    .sm\:grid-flow-row {
+        grid-auto-flow: row
+    }
+    .sm\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
     }
     .sm\:flex-row {
         flex-direction: row
