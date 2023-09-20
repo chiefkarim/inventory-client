@@ -5,13 +5,16 @@ import Footer from "./Footer"
 import { useNavigate } from 'react-router-dom'; 
 import { useParams } from "react-router-dom"
 
-const getData= (method,setLoading,setError,setCollections,id)=>{
+const getData= (method,id)=>{
+  const [collections,setCollections ] = useState(null)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(true)
   let url=''
   if(id){
 url=`https://inventory-karim.fly.dev/collection/${id}/api`
   }else{
     //chnage this to show collection name
-url='https://inventory-karim.fly.dev/item/create/api'
+url='https://inventory-karim.fly.dev/collection/create/api'
   }
     useEffect(()=>{
         fetch(url
@@ -25,24 +28,21 @@ url='https://inventory-karim.fly.dev/item/create/api'
 
     
     },[])
+    return{error,loading,collections}
 }
 
 
 export default function CollectionControls({action}){
-  const [collections,setCollections ] = useState(null)
-  const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const navigate = useNavigate()
   const {id} = useParams()
+  const {error,loading,collections} =  getData('GET',id || null)
+  const navigate = useNavigate()
   const [formState,setFormState] = useState({state:'',url:''})
   
-  getData('GET',setLoading,setError,setCollections,id || null)
 
     function handelForm(e,deleted){
       setFormState({state:'Please wait while checking your information'})
       e.preventDefault()
       const formData= new FormData(e.currentTarget)
-      
       let url=''
       if(deleted === 'delete'){
         url=`https://inventory-karim.fly.dev/collection/${id}/delete/api`
@@ -76,7 +76,7 @@ export default function CollectionControls({action}){
        navigate(formState.url);
       }
     }, [formState.url, navigate]);
-    if(error) return <h1>error</h1>
+    if(error) return <h1>errors,{}</h1>
     if(loading === true) return <div className=" text-center"><h1>loading</h1></div>
   
     return(<div>
