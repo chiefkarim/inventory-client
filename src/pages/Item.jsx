@@ -39,17 +39,17 @@ preview.style.opacity=1
     return(
       <div>
     <Nav/>
-    <main className="sm:px-28 px-3 ">
-        <section className="grid grid-cols-3 grid-rows-3 gap-5 my-[5rem] h-[50vh] sm:h-[60vh]">
-            <section className="previewImages stretch w-full h-full sm:grid grid-cols-3 grid-rows-3 col-span-2 row-span-4 gap-5 overflow-scroll">
-                <img id="a" onClick={(event)=>{changePreview(event)}} className="col-start-1  col-end-1 h-[70%] sm:h-full w-full" src={item.item.src[0].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
-                <img id="b" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-2 h-[70%] row-end-2 sm:h-full w-full " src={item.item.src[1].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
-                <img id="c" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-3 h-[70%] row-end-3 sm:h-full w-full" src={item.item.src[2].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
-                <img id="preview"  className="hidden sm:block h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[3s]" src={item.item.src[0]} />
+    <main className="lg:px-28 px-3 ">
+        <section className="grid grid-cols-3 grid-rows-3 gap-5 my-[5rem] h-[50vh] lg:h-[60vh]">
+            <section className="previewImages stretch w-full h-full lg:grid grid-cols-3 grid-rows-3 col-span-2 row-span-4 gap-5 overflow-scroll">
+                <img id="a" onClick={(event)=>{changePreview(event)}} className="col-start-1  col-end-1 h-[70%] lg:h-full w-full" src={item.item.src[0].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
+                <img id="b" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-2 h-[70%] row-end-2 lg:h-full w-full " src={item.item.src[1].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
+                <img id="c" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-3 h-[70%] row-end-3 lg:h-full w-full" src={item.item.src[2].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
+                <img id="preview"  className="hidden lg:block h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[3s]" src={item.item.src[0]} />
             </section>
         
 <section className="flex flex-col ">
-<h1 className="m-0  sm:text-13xl font-light">{ item.item.name}</h1>
+<h1 className="m-0  lg:text-13xl font-light">{ item.item.name}</h1>
 <p>{item.item.price}$</p>
 <p className="  break-words">
 {item.item.description }
@@ -61,8 +61,8 @@ preview.style.opacity=1
         </section>
 
     <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
-    <section className="grid px-3 justify-center my-10 gap-8 sm:max-h-[60vh] sm:grid-cols-3  sm:w-auto sm:grid-flow-row">
-    <article className="relative sm:w-auto w-[70vw] h-[30vh] ">  
+    <section className="grid px-3 justify-center my-10 gap-8 lg:max-h-[60vh] lg:grid-cols-3  lg:w-auto lg:grid-flow-row">
+    <article className="relative lg:w-auto w-[70vw] h-[30vh] ">  
         <picture >
             <source
             media="(max-width: 767px)"
@@ -93,7 +93,7 @@ preview.style.opacity=1
                 <a role="button" href="/collection/" className=" block py-2 no-underline font-light text-[#F5F5F5]">Brows all collections</a>        
             </div>
     </article>
-    <article className="  w-[70vw] h-[30vh] sm:w-auto relative" >
+    <article className="  w-[70vw] h-[30vh] lg:w-auto relative" >
         <picture>
             <source
             media="(max-width: 767px)"
@@ -122,7 +122,7 @@ preview.style.opacity=1
                 <a role="button" href="/collection/64f04ee8c881d587d6d92e93" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</a>        
     
             </div></article>
-    <article className="w-[70vw] h-[30vh] sm:w-auto  relative">
+    <article className="w-[70vw] h-[30vh] lg:w-auto  relative">
         <picture>
             <img className="w-[100%] h-[100%]"
             sizes="(max-width: 1400px) 100vw, 1400px"

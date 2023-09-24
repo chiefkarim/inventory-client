@@ -36,11 +36,11 @@ export default function Index(){
         </picture>
         <Nav />
 
-    <main className="sm:px-28 px-3">
+    <main className="lg:px-28 px-3">
         <section className="h-[100vh] ">
-           <h1 className="sm:text-13xl font-normal text-[1.5rem] w-[50vw] pt-32 pb-10 sm:py-16 text-[#f5f5f5] ">Fashion is a statement <br className='hidden sm:flex'/>
+           <h1 className="lg:text-13xl font-normal text-[1.5rem] w-[50vw] pt-32 pb-10 lg:py-16 text-[#f5f5f5] ">Fashion is a statement <br className='hidden lg:flex'/>
             make sure you say the right thing</h1>
-            <a role="button" href="/collection/" className="p-3   hover:bg-[#F5F5F5] hover:text-[#3C3C34] sm:p-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</a>        
+            <a role="button" href="/collection/" className="p-3   hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</a>        
         
         </section>
         <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
@@ -103,7 +103,7 @@ export default function Index(){
                 alt=""/>
                 </picture>
                 <div className="absolute  bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                    <a role="button" href="/collection/64f04ee8c881d587d6d92e93" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</a>        
+                    <a role="button" href="/collection/6509b21ae50ccd4dced24719" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</a>        
         
                 </div></article>
         <article className=" row-span-1 relative">
@@ -124,7 +124,7 @@ export default function Index(){
                 alt=""/>
                 </picture>
                 <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                    <a role="button" href="/collection/64f04ee8c881d587d6d92e91" className=" block py-2 no-underline font-light text-[#F5F5F5]">Button up</a>        
+                    <a role="button" href="/collection/6509b21ae50ccd4dced24717" className=" block py-2 no-underline font-light text-[#F5F5F5]">Button up</a>        
                 </div>
         </article>
         </article>

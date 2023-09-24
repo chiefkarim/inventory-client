@@ -21,7 +21,7 @@ export default function SingIn(){
             }).then((data)=>{
                 setData(data)
                 if(typeof data == 'object' && data.accessToken ){
-                     document.cookie=`Authenticate=Bearer ${data.accessToken}`
+                     document.cookie=`Authenticate=Bearer ${data.accessToken}; path=/;`
                      
                       navigate('/')
                     
@@ -37,7 +37,7 @@ export default function SingIn(){
     return(<div  className="m-0 min-h-screen flex flex-col  justify-between tracking-widest bg-[#D7CEB2] font-thin font-helvetica-neue ">
 
 <Nav/>
-<main className="sm:px-28 px-3 sm:my-10 mt-[10rem]  ">
+<main className="lg:px-28 px-3 lg:my-10 mt-[10rem]  ">
     <section className="  w-full flex justify-center align-bottom">
       
         <form id='formdataaa' className=" grid-center font-normal grid gap-10 " action="" method="post"  onSubmit={(e)=>{authData(e)}}>
@@ -51,7 +51,7 @@ export default function SingIn(){
           </label>
 
       
-  <button type="submit"  className="w-fit p-2    hover:bg-[#F5F5F5] hover:text-[#3C3C34] sm:p-3  no-underline bg-[#3C3C34] text-[#F5F5F5]">Log in</button>
+  <button type="submit"  className="w-fit p-2    hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-3  no-underline bg-[#3C3C34] text-[#F5F5F5]">Log in</button>
     { typeof data == 'object' && data != null && data.errors ? 
       data.errors.map(error=>( 
         <span key={uuid}>

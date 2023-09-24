@@ -1,6 +1,6 @@
 export default function Footer(){
   return(<footer className=" mt-20 py-5 bg-[#3C3C34] w-full flex flex-row justify-between self-baseline">
-  <section className="px-3 sm:pl-28  text-[#f5f5f5] ">
+  <section className="px-3 lg:pl-28  text-[#f5f5f5] ">
     <h2 className="text-[1.5rem] font-light  ">About the shop</h2>
     <p className="whitespace-pre-line  ">
       The story of Leo and Violette, it&apos;s ours.We are Léo Dominguez & Violette
@@ -10,7 +10,7 @@ export default function Footer(){
       use their products in this demo store
     </p>
   </section>
-  <section className="px-3 sm:pr-28 text-[#f5f5f5]  ">
+  <section className="px-3 lg:pr-28 text-[#f5f5f5]  ">
     <h2 className="text-[1.5rem] font-light ">Contact</h2>
     <a
       role="button"

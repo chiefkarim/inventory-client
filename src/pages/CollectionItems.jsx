@@ -69,14 +69,14 @@ function CollectionItems(){
       </picture>
   
 <Nav/>
-        <main className="sm:px-28">
+        <main className="lg:px-28">
 
 
 
 
         
-            <section className="sm:h-[85vh] ">
-               <h1 className="sm:text-29xl py-16 text-[#3B3B3B] sm:text-center ">build your wardrobe with the  basics
+            <section className="lg:h-[85vh] ">
+               <h1 className="lg:text-29xl py-16 text-[#3B3B3B] lg:text-center ">build your wardrobe with the  basics
                 and start mixing and matching
                 show your personality</h1>
             

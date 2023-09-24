@@ -9,11 +9,13 @@ const getData= (method,id)=>{
   const [collections,setCollections ] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+
   let url=''
   if(id){
-url=`https://inventory-karim.fly.dev/collection/${id}/api`
+url=`https://inventory-karim.fly.dev/collection/${id}/edit/api`
   }else{
-    //chnage this to show collection name
+    //change this to show collection name
 url='https://inventory-karim.fly.dev/collection/create/api'
   }
     useEffect(()=>{
@@ -21,8 +23,13 @@ url='https://inventory-karim.fly.dev/collection/create/api'
 ,        {headers:{Authorization:document.cookie,credentials:'include',method:method}}).then((data)=>{
            return data.json()    
         }).then((data)=>{
+          console.log(data)
+          if(data.status == 403){
+            navigate('/log-in')
+          }
             setCollections(data)
-        }).catch(err=>        {console.log(err)
+          }).catch(err=>        {console.log(err)
+            
           setError(err)}        )
         .finally(()=>setLoading(false))
 
@@ -54,6 +61,9 @@ export default function CollectionControls({action}){
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
       .then((data)=>{
+        if(data.status == 403){
+          navigate('/log-in')
+        }
                  return data.json()    
               })
       .then((data)=>{
@@ -64,6 +74,7 @@ export default function CollectionControls({action}){
                     setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
       .catch(err=>     {  console.log('err',err)
+     
          setFormState((state)=>{return{...state,errors:[err]}})}        )
       .finally(()=>{  
         if(deleted == 'delete'){
@@ -82,7 +93,7 @@ export default function CollectionControls({action}){
     return(<div>
 
 <Nav/>
-<main className="sm:px-28 sm:py-14 px-3 pt-[5rem] ">
+<main className="lg:px-28 lg:py-14 px-3 pt-[5rem] ">
     <section >
       {  typeof collections == 'object' && collections.item ?
         

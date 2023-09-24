@@ -7,17 +7,21 @@ import { useParams } from "react-router-dom";
 
 const getData= (method,setLoading,setError,setCollections,id)=>{
   let url=''
+  const navigate = useNavigate()
 
   if(id){
 url=`https://inventory-karim.fly.dev/item/${id}/edit/api`
   }else{
-url='https://inventory-karim.fly.dev/collection/api'
+url='https://inventory-karim.fly.dev/item/create/api'
   }
     useEffect(()=>{
         fetch(url
 ,        {headers:{Authorization:document.cookie,credentials:'include',method:method}}).then((data)=>{
            return data.json()    
         }).then((data)=>{
+          if(data.status == 403){
+            navigate('/log-in')
+          }
           console.log(data)
             setCollections(data)
         }).catch(err=>        setError(err)        )
@@ -54,6 +58,7 @@ export default function ItemController({action}){
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
       .then((data)=>{
+
                  return data.json()    
               })
       .then((data)=>{
@@ -81,7 +86,7 @@ export default function ItemController({action}){
     return(<div>
 
 <Nav/>
-<main className="sm:px-28 sm:py-14 px-3 pt-[5rem]">
+<main className="lg:px-28 lg:py-14 px-3 pt-[5rem]">
     <section >
       {  typeof collections == 'object' && collections.item ?
         
