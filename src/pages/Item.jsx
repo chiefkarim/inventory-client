@@ -3,11 +3,19 @@ import { useParams } from "react-router-dom"
 import {v4 as uuid} from 'uuid'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { useDispatch } from "react-redux"
+import { itemAdded } from "../cartReducer";
+import { useSelector } from "react-redux/es/hooks/useSelector"
+import { itemQuantityDecreased } from "../cartReducer";  
+import { itemQuantityIncreased } from "../cartReducer";
+import { itemRemoved } from "../cartReducer";
+
 const itemDetails= ()=>{
     const [item,setItem ] = useState(null)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
     const {id}=useParams()
+    
     useEffect(()=>{
         fetch(`https://inventory-karim.fly.dev/item/${id}/api`).then((data)=>{
            return data.json()    
@@ -22,6 +30,33 @@ const itemDetails= ()=>{
     return {item,error,loading}
 }
 export default function Item(){
+    const dispatch = useDispatch()
+    const items = useSelector(state=>state.cart)
+    const {id}=useParams()
+    const {username} = useSelector(state=>state.currentUser)
+    console.log('items',items)
+    
+    function addToCart(){
+        if(items.items.filter(item=>{if(item.id===id) return item.id}).length == 0 ){
+dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1}))
+        }
+    }
+    function removeFromCart(){
+        if(items.items.filter(item=>{if(item.id===id) return item.id}).length > 0 ){
+dispatch(itemRemoved({id:id}))
+        }
+    }
+    function increaseQuantity(){
+        if(items.items.filter(product=>{if(product.id===id && item.item.stock > product.quantity +1) return product.id}).length > 0 ){
+        dispatch(itemQuantityIncreased({id:id,stock:item.item.stock}))
+        }
+    }
+
+    function decreaseQuantity(){
+        if(items.items.filter(item=>{if(item.id===id && item.quantity > 1 ) return item.id}).length > 0 ){
+            dispatch(itemQuantityDecreased({id:id}))
+        }
+    }
     const {item,error,loading} =itemDetails()
     function changePreview(newImage){
             
@@ -56,7 +91,13 @@ preview.style.opacity=1
 </p>
 </section>
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
-<a role="button" href={`${item.item._id }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</a>        
+    {username === 'admin' ?(<a role="button" href={`${item.item._id }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</a>)    :
+    (<><button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
+    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={removeFromCart}>remove from cart</button>  
+    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={increaseQuantity}>+</button>
+    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={decreaseQuantity }>-</button></>)  
+
+ }
 </section>
         </section>
 

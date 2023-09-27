@@ -1,5 +1,4 @@
 import LogOut from "./Log-Out"
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux/es/hooks/useSelector"
@@ -11,10 +10,8 @@ const Controllers =()=>{
 }
 export default function Nav(){
     const {username} =useSelector(state=>state.currentUser)
-    console.log('redux',username)
     const dispatch = useDispatch()
      if(username === null){  
-        console.log('store initiated')
         fetch('https://inventory-karim.fly.dev/',  {method:'POST',
         headers:{ Authorization:document.cookie,credentials:'include'},}).then((data)=>{
            return data.json()    
