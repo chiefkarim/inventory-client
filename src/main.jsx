@@ -8,6 +8,8 @@ import Collection from './pages/Collection.jsx'
 import SingIn from './pages/Sing-in.jsx'
 import CollectionControls from './components/CollectionControls.jsx'
 import ItemController from './components/ItemController.jsx'
+import { Provider } from 'react-redux'
+import store from './store.js'
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,8 @@ const router = createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router={router}/>
+    </Provider>
   </React.StrictMode>,
 )

@@ -3,28 +3,29 @@ import { useEffect, useState } from "react"
 import {v4 as uuid}  from 'uuid'
 import Footer from "../components/Footer"
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux/es/hooks/useSelector"
+import { UserLoggedIn } from "../currentUserReducer"
 
 export default function SingIn(){
     const [data,setData ] = useState(null)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     function authData(e){
 
       setData({errors:[{msg:'please wait while checking your information'}]})
-      const formData= new FormData(e.target)
       e.preventDefault()
             fetch('https://inventory-karim.fly.dev/log-in/api',  {method:'POST',
             body:new FormData(e.currentTarget)}).then((data)=>{
                return data.json()    
             }).then((data)=>{
-                setData(data)
                 if(typeof data == 'object' && data.accessToken ){
                      document.cookie=`Authenticate=Bearer ${data.accessToken}; path=/;`
-                     
+                     console.log(data)
+                     dispatch(UserLoggedIn(data.username))
                       navigate('/')
-                    
                 }
                 
             }).catch(err=>       {  console.log(err)
