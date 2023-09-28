@@ -13,6 +13,7 @@ const Controllers =()=>{
 export default function Nav(){
     const {username} =useSelector(state=>state.currentUser)
     const dispatch = useDispatch()
+    const cart=useSelector(state=>state.cart) 
      if(username === null){  
         fetch('https://inventory-karim.fly.dev/',  {method:'POST',
         headers:{ Authorization:document.cookie,credentials:'include'},}).then((data)=>{
@@ -60,9 +61,17 @@ export default function Nav(){
 <Link role="button" to="/" className="text-5xl  lg:p-6 py-2 px-3 font-light no-underline lg:min-w-fit text-[#F5F5F5]">E-commerce</Link>        
     <div className="mobileMenu hidden  lg:text-5xl lg:flex  w-full  text-center font-thin lg:flex-row  flex-col lg:justify-between ">
         
-<Link role="button" to="/collection/" className="py-3 lg:p-6  no-underline text-[#F5F5F5]">Collection</Link>        
+<Link role="button" to="/collection/" className="py-2 lg:p-6  no-underline text-[#F5F5F5]">Collection</Link>        
    {username === 'admin' ? <Controllers/> :  (<div className="py-3 lg:p-6">
-   <button className="border-none bg-[#3C3C34]" onClick={toggleCart}> <svg width="25px" height="25px" className="Icon Icon--cart relative top-0.5 " role="presentation" viewBox="0 0 17 20" cursor="pointer"><path d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z" fill="white"></path></svg></button>
+   <button className={"border-none bg-[#3C3C34] "}   onClick={toggleCart}> 
+   
+   <svg width="25px" height="25px"  className="Icon Icon--cart relative top-0.5 " role="presentation" viewBox="0 0 17 20" cursor="pointer"><path d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z" fill="white"></path>
+   
+   </svg>
+   <span className="relative  -top-9 left-4 right-0 bg-red-700 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+        {cart.items.length}
+      </span>
+   </button>
      <Link  role="button" to="/log-in" className=" lg:p-6 py-3   no-underline text-[#F5F5F5]  ">Log in</Link>
      </div>)
  }
@@ -74,7 +83,7 @@ export default function Nav(){
             <span className=" h-[3px] w-full bg-white rounded"  ></span>
             <span className=" h-[3px] w-full bg-white rounded"  ></span>            
         </Link>
-        <div  onClick={toggleCart} className="overlay hidden  cursor-pointer opacity-0 fixed  top-0 left-0 bottom-0 transition-opacity duration-[.3s] ease-in-out right-0 bg-[rgba(0,0,0,.7)] z-10 "></div>
-<Cart toggleCart={toggleCart}/>
+        <div  onClick={toggleCart} className="overlay hidden   cursor-pointer opacity-0 fixed  top-0 left-0 bottom-0 transition-opacity duration-[.3s] ease-in-out right-0 bg-[rgba(0,0,0,.7)] z-10  "></div>
+<Cart toggleCart={toggleCart} className=" "/>
 </nav>)
 }
