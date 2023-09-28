@@ -4,7 +4,7 @@ import {v4 as uuid}  from 'uuid'
 import Footer from "../components/Footer"
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux"
-import { UserLoggedIn } from "../currentUserReducer"
+import { UserLoggedIn } from "../redux/currentUserReducer"
 
 export default function SingIn(){
     const [data,setData ] = useState(null)

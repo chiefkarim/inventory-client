@@ -1,14 +1,13 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-import {v4 as uuid} from 'uuid'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useDispatch } from "react-redux"
-import { itemAdded } from "../cartReducer";
+import { itemAdded } from "../redux/cartReducer";
 import { useSelector } from "react-redux/es/hooks/useSelector"
-import { itemQuantityDecreased } from "../cartReducer";  
-import { itemQuantityIncreased } from "../cartReducer";
-import { itemRemoved } from "../cartReducer";
+import { itemQuantityDecreased } from "../redux/cartReducer";  
+import { itemQuantityIncreased } from "../redux/cartReducer";
+import { itemRemoved } from "../redux/cartReducer";
 import { Link } from "react-router-dom";
 
 const itemDetails= ()=>{
@@ -32,29 +31,30 @@ const itemDetails= ()=>{
 }
 export default function Item(){
     const dispatch = useDispatch()
-    const items = useSelector(state=>state.cart)
+    const cart = useSelector(state=>state.cart)
     const {id}=useParams()
     const {username} = useSelector(state=>state.currentUser)
-    console.log('items',items)
+    console.log('items',cart)
     
     function addToCart(){
-        if(items.items.filter(product=>{if(product.id===id) return product.id}).length == 0 ){
-dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1,src:item.item.src[0]}))
+        if(cart.items.filter(product=>{if(product.id===id) return product.id}).length == 0 ){
+dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1,src:item.item.src[0],stock:item.item.stock}))
         }
     }
     function removeFromCart(){
-        if(items.items.filter(item=>{if(item.id===id) return item.id}).length > 0 ){
+        if(cart.items.filter(item=>{if(item.id===id) return item.id}).length > 0 ){
 dispatch(itemRemoved({id:id}))
         }
     }
     function increaseQuantity(){
-        if(items.items.filter(product=>{if(product.id===id && item.item.stock > product.quantity +1) return product.id}).length > 0 ){
+        if(cart.items.filter(product=>{if(product.id===id && product.stock > product.quantity +1) return product.id}).length > 0 ){
+            console.log('stock',item.item.stock)
         dispatch(itemQuantityIncreased({id:id,stock:item.item.stock}))
         }
     }
 
     function decreaseQuantity(){
-        if(items.items.filter(item=>{if(item.id===id && item.quantity > 1 ) return item.id}).length > 0 ){
+        if(cart.items.filter(item=>{if(item.id===id && item.quantity > 1 ) return item.id}).length > 0 ){
             dispatch(itemQuantityDecreased({id:id}))
         }
     }
