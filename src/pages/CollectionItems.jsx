@@ -3,6 +3,7 @@ import {v4 as uuid} from 'uuid'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 const itemsList= ()=>{
     const [items,setItems ] = useState(null)
     const [error, setError] = useState(null)
@@ -98,7 +99,7 @@ function CollectionItems(){
                   <p className="Price p-0 m-0 text-stone-50 font-light leading-snug">{item.price}$</p>
                 </div>
                 <div className="flex self-stretch flex-col"> 
-                           <a role="button" href={`/item/${item._id }`} className=" self-end p-1.5 font-light text-[#3C3C34] no-underline bg-[#F5F5F5]">Shop now</a>        
+                           <Link role="button" to={`/item/${item._id }`} className=" self-end p-1.5 font-light text-[#3C3C34] no-underline bg-[#F5F5F5]">Shop now</Link>        
                 </div>
               </div>
             </div>)

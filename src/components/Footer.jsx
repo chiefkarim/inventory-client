@@ -12,28 +12,28 @@ export default function Footer(){
   </section>
   <section className="px-3 lg:pr-28 text-[#f5f5f5]  ">
     <h2 className="text-[1.5rem] font-light ">Contact</h2>
-    <a
+    <a target='_blank'
       role="button"
       href="/"
       className=" block py-2 no-underline text-[#F5F5F5]"
     >
       Facebook
     </a>
-    <a
+    <a target='_blank'
       role="button"
       href="/"
       className=" block py-2 no-underline text-[#F5F5F5]"
     >
       Twitter
     </a>
-    <a
+    <a target='_blank'
       role="button"
       href="/"
       className=" blcok py-2  no-underline text-[#F5F5F5]"
     >
       Instagram
     </a>
-    <a
+    <a target='_blank'
       role="button"
       href="/"
       className=" block py-2  no-underline text-[#F5F5F5]"

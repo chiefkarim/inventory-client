@@ -9,6 +9,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector"
 import { itemQuantityDecreased } from "../cartReducer";  
 import { itemQuantityIncreased } from "../cartReducer";
 import { itemRemoved } from "../cartReducer";
+import { Link } from "react-router-dom";
 
 const itemDetails= ()=>{
     const [item,setItem ] = useState(null)
@@ -37,8 +38,8 @@ export default function Item(){
     console.log('items',items)
     
     function addToCart(){
-        if(items.items.filter(item=>{if(item.id===id) return item.id}).length == 0 ){
-dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1}))
+        if(items.items.filter(product=>{if(product.id===id) return product.id}).length == 0 ){
+dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1,src:item.item.src[0]}))
         }
     }
     function removeFromCart(){
@@ -62,9 +63,10 @@ dispatch(itemRemoved({id:id}))
             
         const preview= document.querySelector(`#preview`)
 preview.style.opacity=0
-preview.src=newImage.target.src
+setTimeout(() => (preview.src=newImage.target.src,preview.style.opacity = "1"),400);
 
-preview.style.opacity=1
+
+
 
       
 
@@ -80,7 +82,7 @@ preview.style.opacity=1
                 <img id="a" onClick={(event)=>{changePreview(event)}} className="col-start-1  col-end-1 h-[70%] lg:h-full w-full" src={item.item.src[0].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
                 <img id="b" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-2 h-[70%] row-end-2 lg:h-full w-full " src={item.item.src[1].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
                 <img id="c" onClick={(event)=>{changePreview(event)}} className="col-start-1 col-end-1 row-start-3 h-[70%] row-end-3 lg:h-full w-full" src={item.item.src[2].replace(/\/v\d+\//g,'/ar_2:1,c_fill,g_face/')}/>
-                <img id="preview"  className="hidden lg:block h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[3s]" src={item.item.src[0]} />
+                <img id="preview"  className="hidden lg:block h-full w-full col-span-2 row-span-3 transition-opacity ease-in-out duration-[.9s]" src={item.item.src[0]} />
             </section>
         
 <section className="flex flex-col ">
@@ -91,7 +93,7 @@ preview.style.opacity=1
 </p>
 </section>
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
-    {username === 'admin' ?(<a role="button" href={`${item.item._id }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</a>)    :
+    {username === 'admin' ?(<Link  role="button" to={`${item.item._id }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>  )    :
     (<><button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
     <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={removeFromCart}>remove from cart</button>  
     <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={increaseQuantity}>+</button>
@@ -103,7 +105,8 @@ preview.style.opacity=1
 
     <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
     <section className="grid px-3 justify-center my-10 gap-8 lg:max-h-[60vh] lg:grid-cols-3  lg:w-auto lg:grid-flow-row">
-    <article className="relative lg:w-auto w-[70vw] h-[30vh] ">  
+    <article className="relative lg:w-auto w-[70vw] h-[30vh] "> 
+    <Link  role="button" to="/collection/" className="w-full h-full block py-2 no-underline font-light text-[#F5F5F5]">          
         <picture >
             <source
             media="(max-width: 767px)"
@@ -130,11 +133,13 @@ preview.style.opacity=1
             alt=""/>
             
             </picture>
-            <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                <a role="button" href="/collection/" className=" block py-2 no-underline font-light text-[#F5F5F5]">Brows all collections</a>        
+            <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] -bottom-2 left-0 flex w-full justify-center items-center bg-">
+                <Link  role="button" to="/collection/" className=" block py-2 no-underline font-light text-[#F5F5F5]">Brows all collections</Link>          
             </div>
+            </Link>
     </article>
     <article className="  w-[70vw] h-[30vh] lg:w-auto relative" >
+          <Link  role="button" to="/collection/6509b21ae50ccd4dced24719" className="w-full h-full block py-2 no-underline font-light text-[#F5F5F5]">          
         <picture>
             <source
             media="(max-width: 767px)"
@@ -159,11 +164,14 @@ preview.style.opacity=1
             src="../images/collections/watch-held-in-hand-over-road_afgiis_c_scale,w_1400.jpg"
             alt=""/>
             </picture>
-            <div className="absolute  bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                <a role="button" href="/collection/64f04ee8c881d587d6d92e93" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</a>        
+            <div className="absolute  bg-[#3C3C34] bg-opacity-60 text-[#ffff] -bottom-2 left-0 flex w-full justify-center items-center bg-">
+                <Link  role="button" to="/collection/6509b21ae50ccd4dced24719" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</Link>          
     
-            </div></article>
+            </div>
+            </Link>
+            </article>
     <article className="w-[70vw] h-[30vh] lg:w-auto  relative">
+    <Link  role="button" to="/collection/6509b21ae50ccd4dced24717" className="w-full h-full block py-2 no-underline font-light text-[#F5F5F5]">          
         <picture>
             <img className="w-[100%] h-[100%]"
             sizes="(max-width: 1400px) 100vw, 1400px"
@@ -180,9 +188,10 @@ preview.style.opacity=1
             src="../images/collections/mens-fashion-close-up-shirt-tucked-in-leaning_fc4j38_c_scale,w_1400.jpg"
             alt=""/>
             </picture>
-            <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                <a role="button" href="/collection/64f04ee8c881d587d6d92e91" className=" block py-2 no-underline font-light text-[#F5F5F5]">Button up</a>        
+            <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] -bottom-2 left-0 flex w-full justify-center items-center bg-">
+                <Link  role="button" to="/collection/6509b21ae50ccd4dced24717" className=" block py-2 no-underline font-light text-[#F5F5F5]">Button up</Link>          
             </div>
+            </Link>
     </article>
     </section>
             </main>

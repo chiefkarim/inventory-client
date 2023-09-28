@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import {v4 as uuid}  from 'uuid'
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
+import { Link } from "react-router-dom"
 const collectionsList= ()=>{
     const [collections,setCollection ] = useState(null)
     const [error, setError] = useState(null)
@@ -83,16 +84,16 @@ export default function Collection(){
                 {  collections.collections.map(collection=>
                 
                ( <article className="relative lg:w-[22vw] m-5" key={uuid()}>  
-                  <a role="button" href={`/collection/${collection._id }/edit `} className="absolute  right-0 block py-2 px-3 no-underline font-light bg-[#3C3C34] text-[#F5F5F5]">Edit</a>        
+                  <Link role="button" to={`/collection/${collection._id }/edit `} className="absolute  right-0 block py-2 px-3 no-underline font-light bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>         
 
-                  <a href={`/collection/${collection._id}`}>
+                  <Link to={`/collection/${collection._id}`}>
                         <img className="lg:h-full lg:w-full h-[40vh] w-[60vw] " 
                         src={collection.src} 
                         alt={collection.name}/>               
                         <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center ">
-                            <a role="button" href={`/collection/${collection._id }`} className=" block py-2 no-underline font-light text-[#F5F5F5]">{collection.name }</a>        
+                            <Link role="button" to={`/collection/${collection._id }`} className=" block py-2 no-underline font-light text-[#F5F5F5]">{collection.name }</Link>         
                         </div>
-                      </a>
+                      </Link> 
                 </article>)
                  )}
               </section>

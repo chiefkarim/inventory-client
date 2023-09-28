@@ -1,5 +1,6 @@
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 export default function Index(){
 
     return(
@@ -40,12 +41,14 @@ export default function Index(){
         <section className="h-[100vh] ">
            <h1 className="lg:text-13xl font-normal text-[1.5rem] w-[50vw] pt-32 pb-10 lg:py-16 text-[#f5f5f5] ">Fashion is a statement <br className='hidden lg:flex'/>
             make sure you say the right thing</h1>
-            <a role="button" href="/collection/" className="p-3   hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</a>        
+            <Link role="button" to="/collection/" className="p-3   hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</Link>         
         
         </section>
         <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
         <section className="grid my-10 gap-8 max-h-[60vh] grid-cols-2 grid-rows-2 grid-flow-col">
         <article className="relative row-span-2 ">  
+        <Link role="button" to="/collection/" className="h-full w-full  block py-2 no-underline font-light text-[#F5F5F5]">        
+
             <picture >
                 <source
                 media="(max-width: 767px)"
@@ -72,12 +75,15 @@ export default function Index(){
                 alt=""/>
                 
                 </picture>
-                <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                    <a role="button" href="/collection/" className=" block py-2 no-underline font-light text-[#F5F5F5]">Brows all collections</a>        
+                <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] -bottom-2 left-0 flex w-full justify-center items-center bg-">
+                    <Link role="button" to="/collection/" className=" block py-2 no-underline font-light text-[#F5F5F5]">Brows all collections</Link>         
                 </div>
+                </Link>
         </article>
         <article className="grid row-span-2 grid-rows-2 gap-8 w-[100%] h-[100%]">
         <article className=" row-span-1 relative" >
+        <Link role="button" to="/collection/6509b21ae50ccd4dced24719" className=" h-[100%] w-[100%] block py-2 no-underline font-light text-[#F5F5F5]">
+
             <picture>
                 <source
                 media="(max-width: 767px)"
@@ -102,11 +108,15 @@ export default function Index(){
                 src="../images/collections/watch-held-in-hand-over-road_afgiis_c_scale,w_1400.jpg"
                 alt=""/>
                 </picture>
-                <div className="absolute  bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                    <a role="button" href="/collection/6509b21ae50ccd4dced24719" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</a>        
+                <div className="absolute  bg-[#3C3C34] bg-opacity-60 text-[#ffff] -bottom-2 left-0 flex w-full justify-center items-center bg-">
+                <Link role="button" to="/collection/6509b21ae50ccd4dced24719" className=" block py-2 no-underline font-light text-[#F5F5F5]">Accessory</Link>         
         
-                </div></article>
+                </div>
+                </Link>         
+                </article>
         <article className=" row-span-1 relative">
+        <Link role="button" to="/collection/6509b21ae50ccd4dced24717" className="h-full w-full block  py-2 no-underline font-light text-[#F5F5F5]">
+
             <picture>
                 <img className="w-[100%] h-[100%]"
                 sizes="(max-width: 1400px) 100vw, 1400px"
@@ -123,9 +133,10 @@ export default function Index(){
                 src="../images/collections/mens-fashion-close-up-shirt-tucked-in-leaning_fc4j38_c_scale,w_1400.jpg"
                 alt=""/>
                 </picture>
-                <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] bottom-0 left-0 flex w-full justify-center items-center bg-">
-                    <a role="button" href="/collection/6509b21ae50ccd4dced24717" className=" block py-2 no-underline font-light text-[#F5F5F5]">Button up</a>        
+                <div className="absolute bg-[#3C3C34] bg-opacity-60 text-[#ffff] -bottom-2 left-0 flex w-full justify-center items-center bg-">
+                    <Link role="button" to="/collection/6509b21ae50ccd4dced24717" className=" block py-2 no-underline font-light text-[#F5F5F5]">Button up</Link>         
                 </div>
+                </Link>
         </article>
         </article>
         </section>

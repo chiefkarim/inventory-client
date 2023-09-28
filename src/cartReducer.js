@@ -13,6 +13,7 @@ export const cartSlice = createSlice({
           id: action.payload.id,
           price: action.payload.price,
           quantity: action.payload.quantity,
+          src:action.payload.src
         },
       ];
       state.total = state.items.reduce(

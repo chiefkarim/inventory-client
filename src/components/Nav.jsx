@@ -43,7 +43,10 @@ export default function Nav(){
     <div className="mobileMenu hidden  lg:text-5xl lg:flex  w-full  text-center font-thin lg:flex-row  flex-col lg:justify-between ">
         
 <Link role="button" to="/collection/" className="py-3 lg:p-6  no-underline text-[#F5F5F5]">Collection</Link>        
-   {username === 'admin' ? <Controllers/> :   <Link  role="button" to="/log-in" className=" lg:p-6 py-3   no-underline text-[#F5F5F5]  ">Log in</Link>
+   {username === 'admin' ? <Controllers/> :  (<div className="py-3 lg:p-6">
+   <button className="border-none bg-[#3C3C34]"> <svg width="25px" height="25px" className="Icon Icon--cart relative top-0.5 " role="presentation" viewBox="0 0 17 20" cursor="pointer"><path d="M0 20V4.995l1 .006v.015l4-.002V4c0-2.484 1.274-4 3.5-4C10.518 0 12 1.48 12 4v1.012l5-.003v.985H1V19h15V6.005h1V20H0zM11 4.49C11 2.267 10.507 1 8.5 1 6.5 1 6 2.27 6 4.49V5l5-.002V4.49z" fill="white"></path></svg></button>
+     <Link  role="button" to="/log-in" className=" lg:p-6 py-3   no-underline text-[#F5F5F5]  ">Log in</Link>
+     </div>)
  }
 </div  >
         <Link onClick={toggleMobileMenu} className="absolute right-[1rem]  p-2 no-underline text-[#F5F5F5]  lg:hidden flex flex-col justify-between w-[30px] h-[21px]">
