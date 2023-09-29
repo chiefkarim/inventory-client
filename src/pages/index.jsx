@@ -7,7 +7,7 @@ export default function Index(){
     < >
     
     <picture className="absolute h-[80vh]  w-screen -z-20  ">
-        <img className="h-[100vh] w-screen"
+        <img className="h-[80vh] lg:h-[100vh] w-screen"
         sizes="(max-width: 1400px) 100vw, 1400px"
         srcSet="
         ../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_200.jpg 200w,

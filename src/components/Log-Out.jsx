@@ -6,6 +6,6 @@ function Logout(){
 document.cookie='Authenticate=; expires='+pastDate.toUTCString()+'; path=/;'
 
 }
-    return( <a href='/' role="button" onClick={Logout} className=" lg:p-6 py-3   no-underline text-[#F5F5F5]  ">Log out</a>
+    return( <a href='/' role="button" onClick={Logout} className=" lg:p-4 py-3   no-underline text-[#F5F5F5]  ">Log out</a>
     )
 }

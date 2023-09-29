@@ -51,7 +51,7 @@ export default function Cart({toggleCart}){
       function checkout(){
         dispatch(clearCart())
       }
-    return(<div className="shoppingCart hidden w-[30vw] top-0 right-0 px-[3rem] h-[100vh] z-20 bg-slate-50 translate-x-0 ">
+    return(<div className="shoppingCart hidden w-[60vw] lg:w-[30vw] top-0 right-0 px-[3rem] h-[100vh] z-20 bg-slate-50 translate-x-0 ">
         <section className="flex justify-between">
          <h1>Cart</h1>
          <button onClick={toggleCart} className="border-none bg-transparent hover:cursor-pointer">
