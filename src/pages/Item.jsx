@@ -5,9 +5,6 @@ import Footer from "../components/Footer";
 import { useDispatch } from "react-redux"
 import { itemAdded } from "../redux/cartReducer";
 import { useSelector } from "react-redux/es/hooks/useSelector"
-import { itemQuantityDecreased } from "../redux/cartReducer";  
-import { itemQuantityIncreased } from "../redux/cartReducer";
-import { itemRemoved } from "../redux/cartReducer";
 import { Link } from "react-router-dom";
 
 const itemDetails= ()=>{
@@ -41,23 +38,10 @@ export default function Item(){
 dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1,src:item.item.src[0],stock:item.item.stock}))
         }
     }
-    function removeFromCart(){
-        if(cart.items.filter(item=>{if(item.id===id) return item.id}).length > 0 ){
-dispatch(itemRemoved({id:id}))
-        }
-    }
-    function increaseQuantity(){
-        if(cart.items.filter(product=>{if(product.id===id && product.stock > product.quantity +1) return product.id}).length > 0 ){
-            console.log('stock',item.item.stock)
-        dispatch(itemQuantityIncreased({id:id,stock:item.item.stock}))
-        }
-    }
+    
+    
 
-    function decreaseQuantity(){
-        if(cart.items.filter(item=>{if(item.id===id && item.quantity > 1 ) return item.id}).length > 0 ){
-            dispatch(itemQuantityDecreased({id:id}))
-        }
-    }
+    
     const {item,error,loading} =itemDetails()
     function changePreview(newImage){
             
@@ -95,9 +79,7 @@ setTimeout(() => (preview.src=newImage.target.src,preview.style.opacity = "1"),4
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
     {username === 'admin' ?(<Link  role="button" to={`${item.item._id }/edit`} className="inline-block p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>  )    :
     (<><button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
-    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={removeFromCart}>remove from cart</button>  
-    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={increaseQuantity}>+</button>
-    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={decreaseQuantity }>-</button></>)  
+    </>)  
 
  }
 </section>

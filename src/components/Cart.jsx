@@ -76,10 +76,10 @@ export default function Cart({toggleCart}){
 <section className="px-1">
 <h2 className="m-0 p-0">{item.name}</h2>
 <h4 className="m-0 ">{item.price * item.quantity}$</h4>
-<button className="inline-block" onClick={()=>increaseQuantity(item.id)}>+</button>
+<button className="inline-block hover:cursor-pointer p-1 m-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={()=>increaseQuantity(item.id)}>+</button>
 <p className="inline-block text-5xl">{item.quantity}</p>
-<button className="inline-block" onClick={()=>decreaseQuantity(item.id)}>-</button>
-<button onClick={()=>removeFromCart(item.id)}>Remove item</button>
+<button className="inline-block hover:cursor-pointer p-1 m-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={()=>decreaseQuantity(item.id)}>-</button>
+<a className="hover:cursor-pointer block   underline font-normal  border-none" onClick={()=>removeFromCart(item.id)}>Remove item</a>
 </section>
 </div>
         ))}
