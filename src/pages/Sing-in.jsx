@@ -19,14 +19,17 @@ export default function SingIn(){
             body:new FormData(e.currentTarget)}).then((data)=>{
                return data.json()    
             }).then((data)=>{
-                if(typeof data == 'object' && data.accessToken ){
+               if(typeof data == 'object' && data.accessToken ){
                      document.cookie=`Authenticate=Bearer ${data.accessToken}; path=/;`
                      dispatch(UserLoggedIn(data.username))
                       navigate('/')
                 }
+                      setData({errors:data.errors})
+
             }).catch(err=>       {  console.log(err)
               setError(err) }       )
-            .finally(()=>{setError(null)})
+            .finally(()=>{
+              setError(null)})
     
         
     
