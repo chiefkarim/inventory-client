@@ -31,12 +31,11 @@ export default function Item(){
     const cart = useSelector(state=>state.cart)
     const {id}=useParams()
     const {username} = useSelector(state=>state.currentUser)
-    console.log('items',cart)
     
     function addToCart(){
         if(cart.items.filter(product=>{if(product.id===id) return product.id}).length == 0 ){
-dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1,src:item.item.src[0],stock:item.item.stock}))
-        }
+    dispatch(itemAdded({id:id,name:item.item.name,price:item.item.price,quantity:1,src:item.item.src[0],stock:item.item.stock}))
+}
     }
     
     

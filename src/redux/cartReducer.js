@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
   name: "cart",
-  initialState: {total:0,
+  initialState:  localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : {total:0,
   items:[]},
   reducers: {
     itemAdded: (state, action) => {
@@ -50,7 +50,6 @@ export const cartSlice = createSlice({
           (total, item) => {return item?.price * item?.quantity + total}
         ,0)
     },clearCart:(state,action)=>{
-      console.log('cleared')
         return {total:0,
           items:[]}
     }
