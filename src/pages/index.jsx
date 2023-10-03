@@ -25,8 +25,8 @@ export default function Index(){
         ../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_1400.jpg 1400w"
         src="../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_1400.jpg"
         alt=""/>
-        <div className="relative -top-28 "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1512 1000" fill="none">
-            <rect width="1512" height="100%" fill="url(#paint0_linear_14_6)"/>
+        <div className="relative -top-28 "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100vw 100vh" fill="none">
+            <rect width="100%" height="100%" fill="url(#paint0_linear_14_6)"/>
             <defs>
             <linearGradient id="paint0_linear_14_6" x1="756" y1="0" x2="756" y2="164" gradientUnits="userSpaceOnUse">
             <stop stopColor="#CFCDCF" stopOpacity="0.5"/>

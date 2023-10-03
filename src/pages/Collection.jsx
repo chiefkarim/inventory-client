@@ -55,8 +55,8 @@ export default function Collection(){
       src="../images/background/clark-street-mercantile-qnKhZJPKFD8-unsplash_d7dfcv_c_scale,w_1400.jpg"
       alt=""/>
       
-      <div className="relative -top-[100vh] "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100vh" viewBox="0 0 1512 100vh" fill="none">
-          <rect width="1512" height="100%" fill="url(#paint0_linear_14_6)"/>
+      <div className="relative -top-[100vh] "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100vh" viewBox="0 0 100vw 100vh" fill="none">
+          <rect width="100%" height="100%" fill="url(#paint0_linear_14_6)"/>
           <defs>
           <linearGradient id="paint0_linear_14_6" x1="756" y1="0" x2="756" y2="100vh" gradientUnits="userSpaceOnUse">
           <stop stopColor="#CFCDCF" stopOpacity="0.5"/>
