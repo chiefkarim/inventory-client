@@ -14,28 +14,33 @@ export default function Footer(){
     <h2 className="text-[1.5rem] font-light ">Contact</h2>
     <a target='_blank'
       role="button"
-      href="/"
+      rel="noreferrer"
+      href="https://www.linkedin.com/in/karimmenna/"
       className=" block py-2 no-underline text-[#F5F5F5]"
     >
-      Facebook
+      Linkedin
     </a>
     <a target='_blank'
       role="button"
-      href="/"
+      href="https://twitter.com/Karim32882557"
+      rel="noreferrer"
       className=" block py-2 no-underline text-[#F5F5F5]"
     >
       Twitter
     </a>
     <a target='_blank'
       role="button"
-      href="/"
+      href="https://www.facebook.com/karim.menna.5/"
+      rel="noreferrer"
+
       className=" blcok py-2  no-underline text-[#F5F5F5]"
     >
-      Instagram
+      Facebook
     </a>
     <a target='_blank'
       role="button"
-      href="/"
+      href="https://github.com/chiefkarim/"
+      rel="noreferrer"
       className=" block py-2  no-underline text-[#F5F5F5]"
     >
       Github
