@@ -22,7 +22,6 @@ url='https://inventory-karim.fly.dev/item/create/api'
           if(data.status == 403){
             navigate('/log-in')
           }
-          console.log(data)
             setCollections(data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))
@@ -57,10 +56,15 @@ export default function ItemController({action}){
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
-      .then((data)=>{
-
-                 return data.json()    
-              })
+      .then((response)=>{
+        if(response.ok){
+          return response.json()
+        }else if(response.status == 403){
+          navigate('/log-in')
+        }
+        
+        throw new Error('Something went wrong. please try again. ');
+      })
       .then((data)=>{
                   if(data.url){
                     setFormState((state)=>{return{...state,url:data.url}})
@@ -68,7 +72,7 @@ export default function ItemController({action}){
                     setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
       .catch(err=>     {  console.log(err)
-         setFormState((state)=>{return{...state,errors:err}})}        )
+         setFormState((state)=>{return{...state,errors:[{msg:err.message}]}})}        )
       .finally(()=>{  
         if(deleted == 'delete'){
           navigate('/')
@@ -88,9 +92,9 @@ export default function ItemController({action}){
 <Nav/>
 <main className="lg:px-28 lg:py-14 px-3 pt-[5rem]">
     <section >
-      {  typeof collections == 'object' && collections.item ?
+      {  typeof collections == 'object' && collections.item && action == 'edit' ?
         
-        <h1>{collections.item.name }</h1>
+        <h1>{collections.item.name  }</h1>
         : ''
          } 
         <form className="grid gap-10 " id="itemDetails" action="" method="post" multiple onSubmit={(e)=>{handelForm(e)}}>
@@ -121,19 +125,17 @@ export default function ItemController({action}){
   </label>
         <div>
        <button type="submit"  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Submit</button>
+       {id ?  <button type="button" onClick={(e)=>{handelForm(e,'delete')}}  className=" w-fit  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Delete</button> : ''}
+
        {formState != null ? typeof formState.errors == 'object' ? 
        formState.errors.map((error)=>(<p key={uuid}>{ error.msg}</p>))
           : (<h1>{formState.state}</h1>) : ''}
 </div>
 </form>
-<form onSubmit={(e)=>{handelForm(e,'delete')}}>
-<button type="submit"  className=" w-fit relative left-20 -top-[3.2rem]  border-none mr-1 inline py-2 px-3  font-light bg-[#3C3C34] text-[#F5F5F5]">Delete</button>
 
-</form>
     </section>
 </main>
 <Footer/>
     </div>)
 }
 
-//add proptypes 'action' to avoid wrong usage 

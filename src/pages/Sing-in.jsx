@@ -16,8 +16,9 @@ export default function SingIn(){
       setData({errors:[{msg:'please wait while checking your information'}]})
       e.preventDefault()
             fetch('https://inventory-karim.fly.dev/log-in/api',  {method:'POST',
-            body:new FormData(e.currentTarget)}).then((data)=>{
-               return data.json()    
+            body:new FormData(e.currentTarget)}).then((response)=>{
+              if (response.ok) return response.json()
+             throw new Error('Something went wrong. please try again')
             }).then((data)=>{
                if(typeof data == 'object' && data.accessToken ){
                      document.cookie=`Authenticate=Bearer ${data.accessToken}; path=/;`
@@ -27,7 +28,7 @@ export default function SingIn(){
                       setData({errors:data.errors})
 
             }).catch(err=>       {  console.log(err)
-              setError(err) }       )
+              setData({errors:[{msg:err.message}]}) }       )
             .finally(()=>{
               setError(null)})
     

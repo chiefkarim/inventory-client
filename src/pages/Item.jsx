@@ -78,7 +78,7 @@ setTimeout(() => (preview.src=newImage.target.src,preview.style.opacity = "1"),4
 </section>
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
     {username === 'admin' ?( <>
-        <Link  role="button" to={`${item.item._id }/edit`} className="inline-block font-normal p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>
+        <Link  role="button" to={`edit`} className="inline-block font-normal p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>
     <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline  bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
     </> )    :
     (<><button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] font-light text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  

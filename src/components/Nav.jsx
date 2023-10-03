@@ -86,7 +86,7 @@ export default function Nav(){
      </div>)
  }
 </div  >
-        <Link onClick={toggleMobileMenu} className="absolute right-[1rem]  p-2 no-underline text-[#F5F5F5]  lg:hidden flex flex-col justify-between w-[30px] h-[21px]">
+        <a onClick={toggleMobileMenu} className="border-none bg-transparent  absolute right-[1rem]  p-2 no-underline text-[#F5F5F5]  lg:hidden flex flex-col justify-between w-[30px] h-[21px]">
        
             <span className="absolute -top-1 right-[1%] lg:left-4  bg-red-700  text-white rounded-full flex items-center justify-center"  > {cart.items.length != 0 ? cart.items.length : ''}</span>
             <span className=" h-[3px] w-full bg-white rounded"  ></span>
@@ -94,7 +94,7 @@ export default function Nav(){
             <span className=" h-[3px] w-full bg-white rounded"  ></span>
             <span className=" h-[3px] w-full bg-white rounded"  ></span>   
                      
-        </Link>
+        </a>
         <div  onClick={toggleCart} className="overlay hidden   cursor-pointer opacity-0 fixed  top-0 left-0 bottom-0 transition-opacity duration-[.3s] ease-in-out right-0 bg-[rgba(0,0,0,.7)] z-10  "></div>
 <Cart toggleCart={toggleCart} className=" "/>
 </nav>)

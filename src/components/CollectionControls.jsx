@@ -23,7 +23,6 @@ url='https://inventory-karim.fly.dev/collection/create/api'
 ,        {headers:{Authorization:document.cookie,credentials:'include',method:method}}).then((data)=>{
            return data.json()    
         }).then((data)=>{
-          console.log(data)
           if(data.status == 403){
             navigate('/log-in')
           }
@@ -60,22 +59,24 @@ export default function CollectionControls({action}){
       {method:'POST',
       headers:{ Authorization:document.cookie,credentials:'include'},
       body:formData})
-      .then((data)=>{
-        if(data.status == 403){
+      .then((response)=>{
+        if(response.status == 403){
           navigate('/log-in')
+        }else if(response.ok){
+          return response.json()
         }
-                 return data.json()    
+        
+        throw new Error('Something went wrong. please try again.');
               })
       .then((data)=>{
                   if(data.url){
                     setFormState((state)=>{return{...state,url:data.url}})
                   }else{
-                    console.log(data)
                     setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
-      .catch(err=>     {  console.log('err',err)
+      .catch(err=>     { 
      
-         setFormState((state)=>{return{...state,errors:[err]}})}        )
+         setFormState((state)=>{return{...state,errors:[{msg:err.message}]}})}        )
       .finally(()=>{  
         if(deleted == 'delete'){
           navigate('/collection')

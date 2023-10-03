@@ -1,0 +1,11 @@
+POST http://localhost:5173/item/create/
+Content-Type: application/json
+
+{
+    "name": "denim jacket",
+    "price": "100",
+    "quantity": "100",
+    "collection": "jacket",
+    "description": "hello from testing",
+    "src": 
+}
