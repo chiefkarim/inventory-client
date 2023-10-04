@@ -302,10 +302,6 @@
 .h-full {
     height: 100%
 }
-.h-fit {
-    height: -moz-fit-content;
-    height: fit-content
-}
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -535,6 +531,10 @@
     padding-top: 1.25rem;
     padding-bottom: 1.25rem
 }
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem
+}
 .pb-10 {
     padding-bottom: 2.5rem
 }
@@ -552,6 +552,12 @@
 }
 .text-center {
     text-align: center
+}
+.align-top {
+    vertical-align: top
+}
+.align-middle {
+    vertical-align: middle
 }
 .align-bottom {
     vertical-align: bottom
@@ -743,6 +749,9 @@
     }
     .lg\:p-5 {
         padding: 1.25rem
+    }
+    .lg\:p-1 {
+        padding: 0.25rem
     }
     .lg\:px-28 {
         padding-left: 7rem;
