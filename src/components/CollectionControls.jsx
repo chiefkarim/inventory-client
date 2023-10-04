@@ -27,7 +27,7 @@ url='https://inventory-karim.fly.dev/collection/create/api'
             navigate('/log-in')
           }
             setCollections(data)
-          }).catch(err=>        {console.log(err)
+          }).catch(err=>        {
             
           setError(err)}        )
         .finally(()=>setLoading(false))

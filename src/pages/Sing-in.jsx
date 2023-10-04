@@ -27,7 +27,7 @@ export default function SingIn(){
                 }
                       setData({errors:data.errors})
 
-            }).catch(err=>       {  console.log(err)
+            }).catch(err=>       { 
               setData({errors:[{msg:err.message}]}) }       )
             .finally(()=>{
               setError(null)})

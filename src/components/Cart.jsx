@@ -31,8 +31,7 @@ export default function Cart({toggleCart}){
             const item=cart.items.filter((product) => {
                 if (product.id === id) return product
               })[0]
-              console.log(item)
-              console.log(id)
+              
           dispatch(itemQuantityIncreased({ id: id, stock: item.stock }));
         }
       }

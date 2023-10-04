@@ -71,7 +71,7 @@ export default function ItemController({action}){
                   }else{
                     setFormState((state)=>{return{...state,errors:data.errors}})
                   }})
-      .catch(err=>     {  console.log(err)
+      .catch(err=>     { 
          setFormState((state)=>{return{...state,errors:[{msg:err.message}]}})}        )
       .finally(()=>{  
         if(deleted == 'delete'){

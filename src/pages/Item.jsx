@@ -17,7 +17,6 @@ const itemDetails= ()=>{
         fetch(`https://inventory-karim.fly.dev/item/${id}/api`).then((data)=>{
            return data.json()    
         }).then((data)=>{
-            console.log(data)
             setItem(data)
         }).catch(err=>        setError(err)        )
         .finally(()=>setLoading(false))

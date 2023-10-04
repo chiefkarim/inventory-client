@@ -33,10 +33,8 @@ export const cartSlice = createSlice({
            return {...item,quantity:1+item.quantity}
         }
       return item})
-        console.log('items',state.items)
         state.total = state.items.reduce(
           (total, item) => {
-            console.log(total,item)
             return item?.price * item?.quantity + total}
         ,0)
     },itemQuantityDecreased:(state,action)=>{
