@@ -57,7 +57,7 @@ export default function Nav(){
  } )
 
     }
-    return(<nav className="lg:px-28 absolute lg:static lg:w-auto w-full  top-0 py-3  lg:flex lg:flex-row flex flex-col  justify-between  bg-[#3C3C34]">
+    return(<nav className="lg:px-28 absolute lg:static lg:w-auto w-full  top-0 py-2  lg:flex lg:flex-row flex flex-col  justify-between  bg-[#3C3C34]">
 <Link role="button" to="/" className="text-5xl  lg:p-4  py-2 p-4 font-thin no-underline lg:min-w-fit text-[#F5F5F5]">Home</Link>        
     <div className="mobileMenu hidden  lg:text-5xl lg:flex  w-full  text-center font-thin lg:flex-row  flex-col lg:justify-between ">
         

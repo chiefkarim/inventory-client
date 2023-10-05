@@ -6,8 +6,8 @@ export default function Index(){
     return(
     < >
     
-    <picture className="absolute h-[80vh]  w-screen -z-20  ">
-        <img className="h-[80vh] lg:h-[100vh] w-screen"
+    <picture className="absolute h-full  w-screen -z-20  ">
+        <img className="h-fit lg:h-full w-screen"
         sizes="(max-width: 1400px) 100vw, 1400px"
         srcSet="
         ../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_200.jpg 200w,
@@ -25,7 +25,7 @@ export default function Index(){
         ../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_1400.jpg 1400w"
         src="../images/background/rooftop-city-fashion_x0ee6e_c_scale,w_1400.jpg"
         alt=""/>
-        <div className="relative -top-28 "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100vw 100vh" fill="none">
+        <div className="relative -top-2 lg:-top-28 "><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100vw 100vh" fill="none">
             <rect width="100%" height="100%" fill="url(#paint0_linear_14_6)"/>
             <defs>
             <linearGradient id="paint0_linear_14_6" x1="756" y1="0" x2="756" y2="164" gradientUnits="userSpaceOnUse">
@@ -38,16 +38,16 @@ export default function Index(){
         <Nav />
 
     <main className="lg:px-28 px-3">
-        <section className="h-[100vh] ">
-           <h1 className="lg:text-13xl font-normal text-[1.5rem] w-[50vw] pt-32 pb-10 lg:py-16 text-[#f5f5f5] ">Fashion is a statement <br className='hidden lg:flex'/>
+        <section className="lg:h-[100vh] h-[40vh] ">
+           <h1 className="lg:text-13xl  lg:w-[27rem] text-[1.1rem] w-[14rem] font-thin pt-[4.7rem] pb-5 lg:py-16 text-[#f5f5f5] ">Fashion is a statement 
             make sure you say the right thing</h1>
-            <Link role="button" to="/collection/" className="p-3   hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-5  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</Link>         
+            <Link role="button" to="/collection/" className="p-2  lg:inline hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-4  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</Link>         
         
         </section>
         <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
-        <section className="grid my-10 gap-8 max-h-[60vh] grid-cols-2 grid-rows-2 grid-flow-col">
-        <article className="relative row-span-2 ">  
-        <Link role="button" to="/collection/" className="h-full w-full  block py-2 no-underline font-light text-[#F5F5F5]">        
+        <section className="grid my-10 lg:gap-8  lg:grid-cols-3 lg:grid-rows-1 lg:grid-flow-col ">
+        <article className="relative col-span-1 w-[80%] justify-self-center h-[80%] ">  
+        <Link role="button" to="/collection/" className="w-full h-full   block py-2 no-underline font-light text-[#F5F5F5]">        
 
             <picture >
                 <source
@@ -80,8 +80,8 @@ export default function Index(){
                 </div>
                 </Link>
         </article>
-        <article className="grid row-span-2 grid-rows-2 gap-8 w-[100%] h-[100%]">
-        <article className=" row-span-1 relative" >
+        <article className="grid lg:col-span-2 grid-flow-col grid-cols-2 self-center lg:gap-8 w-[100%] h-[100%]">
+        <article className=" justify-self-center col-span-1 relative w-[80%] h-[80%]" >
         <Link role="button" to="/collection/6509b21ae50ccd4dced24719" className=" h-[100%] w-[100%] block py-2 no-underline font-light text-[#F5F5F5]">
 
             <picture>
@@ -114,7 +114,7 @@ export default function Index(){
                 </div>
                 </Link>         
                 </article>
-        <article className=" row-span-1 relative">
+        <article className=" lg:col-span-1 justify-self-center relative w-[80%] h-[80%] ">
         <Link role="button" to="/collection/6509b21ae50ccd4dced24717" className="h-full w-full block  py-2 no-underline font-light text-[#F5F5F5]">
 
             <picture>
