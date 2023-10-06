@@ -237,6 +237,9 @@
 .ml-5 {
     margin-left: 1.25rem
 }
+.mb-10 {
+    margin-bottom: 2.5rem
+}
 .box-border {
     box-sizing: border-box
 }
@@ -315,6 +318,15 @@
 }
 .h-full {
     height: 100%
+}
+.h-\[\] {
+    height: 
+}
+.h-\[80vh\] {
+    height: 80vh
+}
+.h-\[70vh\] {
+    height: 70vh
 }
 .min-h-screen {
     min-height: 100vh
@@ -436,6 +448,9 @@
 }
 .w-\[100px\] {
     width: 100px
+}
+.w-\[6\] {
+    width: 6
 }
 .translate-x-0 {
     --tw-translate-x: 0px;
@@ -637,6 +652,14 @@
     padding-top: 0.25rem;
     padding-bottom: 0.25rem
 }
+.px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem
+}
+.px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem
+}
 .pb-12 {
     padding-bottom: 3rem
 }
@@ -660,6 +683,12 @@
 }
 .font-helvetica-neue {
     font-family: 'Helvetica Neue'
+}
+.font-\[\] {
+    font-family: 
+}
+.font-\[\.5rem\] {
+    font-family: .5rem
 }
 .text-17xl {
     font-size: 2.25rem
@@ -688,6 +717,18 @@
 .text-\[1\.2rem\] {
     font-size: 1.2rem
 }
+.text-\[\.5rem\] {
+    font-size: .5rem
+}
+.text-\[\.7rem\] {
+    font-size: .7rem
+}
+.text-\[\.8rem\] {
+    font-size: .8rem
+}
+.text-\[\.6rem\] {
+    font-size: .6rem
+}
 .font-bold {
     font-weight: 700
 }
@@ -699,6 +740,9 @@
 }
 .font-thin {
     font-weight: 100
+}
+.font-\[1\] {
+    font-weight: 1
 }
 .uppercase {
     text-transform: uppercase
@@ -748,6 +792,9 @@
 }
 .text-\[\] {
     color: 
+}
+.text-\[\.rem\] {
+    color: .rem
 }
 .underline {
     text-decoration-line: underline
@@ -872,6 +919,9 @@
     .lg\:w-full {
         width: 100%
     }
+    .lg\:w-28 {
+        width: 7rem
+    }
     .lg\:min-w-fit {
         min-width: -moz-fit-content;
         min-width: fit-content
@@ -946,6 +996,12 @@
     }
     .lg\:text-5xl {
         font-size: 1.5rem
+    }
+    .lg\:text-base {
+        font-size: 1rem
+    }
+    .lg\:text-17xl {
+        font-size: 2.25rem
     }
 }
 

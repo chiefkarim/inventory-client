@@ -50,7 +50,7 @@ export default function Cart({toggleCart}){
       function checkout(){
         dispatch(clearCart())
       }
-    return(<div className="shoppingCart hidden w-[60vw] lg:w-[30vw] top-0 right-0 px-[3rem] h-[100vh] z-20 bg-slate-50 translate-x-0 ">
+    return(<div className="shoppingCart mb-10  hidden w-[60vw] lg:w-[30vw] top-0 right-0 px-[3rem] h-[100vh] z-20 bg-slate-50 translate-x-0 ">
         <section className="flex justify-between">
          <h1>Cart</h1>
          <button onClick={toggleCart} className="border-none bg-transparent hover:cursor-pointer">
@@ -69,7 +69,7 @@ export default function Cart({toggleCart}){
             </svg>
             </button>
         </section>
-        <section className=" overflow-scroll  ">
+        <section className=" overflow-scroll h-[70vh]  ">
         {cart.items.map(item=>(<div key={uuid} className="cartItem flex p-2">
             <img className="w-[40%] " src={item.src.replace(/\/v\d+\//g,'/ar_2:1,c_fill/')}/>
 <section className="px-1">
@@ -83,7 +83,7 @@ export default function Cart({toggleCart}){
 </div>
         ))}
         </section>
-        <section>
+        <section className=" mb-10">
             <h1>Total: {cart.total}</h1>
         <button onClick={checkout} className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5] border-none" >Check out</button>        
          </section>

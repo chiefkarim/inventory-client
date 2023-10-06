@@ -76,17 +76,17 @@ setTimeout(() => (preview.src=newImage.target.src,preview.style.opacity = "1"),4
 </section>
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
     {username === 'admin' ?( <>
-        <Link  role="button" to={`edit`} className="inline-block w-28 font-light p-3 mr-5  text-base text-center my-2 no-underline  bg-[#3C3C34] text-[#F5F5F5] box-border">Edit</Link>
-    <button className="inline-block hover:cursor-pointer  p-3 text-center  w-28 no-underline text-base font-light font-helvetica-neue  bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
+        <Link  role="button" to={`edit`} className="inline-block w-[5rem] lg:w-28 lg:text-base text-[.7rem] font-light p-3 mr-5   text-center my-2 no-underline  bg-[#3C3C34] text-[#F5F5F5] box-border">Edit</Link>
+    <button className="inline-block hover:cursor-pointer  p-3 text-center lg:w-28 lg:text-base w-[5rem] no-underline  text-[.7rem] font-light font-helvetica-neue  bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
     </> )    :
-    (<><button className="inline-block hover:cursor-pointer p-3 text-center w-28 font-helvetica-neue no-underline text-base bg-[#3C3C34] font-light text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
+    (<><button className="inline-block hover:cursor-pointer p-3 text-center lg:w-28 lg:text-base w-[5rem] font-helvetica-neue no-underline  bg-[#3C3C34] text-[.7rem] font-light text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
     </>)  
 
  }
 </section>
         </section>
 
-    <h1 className="text-center  font-light pb-12 text-17xl text-[#3C3C34]">collections</h1>
+    <h1 className="text-center  font-light pb-12  text-17xl text-[#3C3C34]">collections</h1>
     <section className="grid px-3 justify-center my-10 gap-8 lg:max-h-[60vh] lg:grid-cols-3  lg:w-auto lg:grid-flow-row">
     <article className="relative lg:w-auto w-[70vw] h-[30vh] "> 
     <Link  role="button" to="/collection/" className="w-full h-full block py-2 no-underline font-light text-[#F5F5F5]">          
