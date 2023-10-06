@@ -68,18 +68,18 @@ setTimeout(() => (preview.src=newImage.target.src,preview.style.opacity = "1"),4
             </section>
         
 <section className="flex flex-col ">
-<h1 className="m-0  lg:text-13xl font-light">{ item.item.name}</h1>
-<p>{item.item.price}$</p>
+<h1 className="m-0  text-5xl lg:text-13xl font-light">{ item.item.name}</h1>
+<p className="m-0  text-[1.2rem]  font-extra-light py-2">{item.item.price}$</p>
 <p className="  break-words">
 {item.item.description }
 </p>
 </section>
 <section className="  col-start-3 row-start-4 row-end-4 mt-6 relative item.itemDetails-end ">
     {username === 'admin' ?( <>
-        <Link  role="button" to={`edit`} className="inline-block font-normal p-3 mr-5 no-underline bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>
-    <button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline  bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
+        <Link  role="button" to={`edit`} className="inline-block w-28 font-light p-3 mr-5  text-base text-center my-2 no-underline  bg-[#3C3C34] text-[#F5F5F5] box-border">Edit</Link>
+    <button className="inline-block hover:cursor-pointer  p-3 text-center  w-28 no-underline text-base font-light font-helvetica-neue  bg-[#3C3C34] text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
     </> )    :
-    (<><button className="inline-block hover:cursor-pointer p-3 mr-5 no-underline bg-[#3C3C34] font-light text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
+    (<><button className="inline-block hover:cursor-pointer p-3 text-center w-28 font-helvetica-neue no-underline text-base bg-[#3C3C34] font-light text-[#F5F5F5] border-none" onClick={addToCart}>Add to cart</button>  
     </>)  
 
  }
