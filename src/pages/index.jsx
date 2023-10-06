@@ -37,9 +37,9 @@ export default function Index(){
         </picture>
         <Nav />
 
-    <main className="lg:px-28 px-3">
+    <main className="lg:px-28 px-4">
         <section className="lg:h-[100vh] h-[40vh] ">
-           <h1 className="lg:text-13xl  lg:w-[27rem] text-[1.1rem] w-[14rem] font-thin pt-[4.7rem] pb-5 lg:py-16 text-[#f5f5f5] ">Fashion is a statement 
+           <h1 className="lg:text-13xl  lg:w-[27rem] text-[1.1rem] w-[14rem]  font-thin pt-[4.7rem] pb-5 lg:py-16 text-[#f5f5f5] ">Fashion is a statement 
             make sure you say the right thing</h1>
             <Link role="button" to="/collection/" className="p-2  lg:inline hover:bg-[#F5F5F5] hover:text-[#3C3C34] lg:p-4  no-underline bg-[#3C3C34] text-[#F5F5F5]">Shop All</Link>         
         

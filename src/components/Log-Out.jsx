@@ -11,6 +11,6 @@ export default function LogOut(){
 document.cookie='Authenticate=; expires='+pastDate.toUTCString()+'; path=/;'
 dispatch(UserLoggedOut())
 }
-    return( <a href='/' onClick={Logout} className=" lg:p-4 py-3   no-underline text-[#F5F5F5]  ">Log out</a>
+    return( <a href='/' onClick={Logout} className=" lg:p-5 py-3   no-underline text-[#F5F5F5]  ">Log out</a>
     )
 }

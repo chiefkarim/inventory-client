@@ -84,7 +84,7 @@ export default function Collection(){
                 {  collections.collections.map(collection=>
                 
                ( <article className="relative lg:w-[22vw] m-5" key={uuid()}>  
-                  <Link role="button" to={`/collection/${collection._id }/edit `} className="absolute  right-0 block py-2 px-3 no-underline font-light bg-[#3C3C34] text-[#F5F5F5]">Edit</Link>         
+                  <Link role="button" to={`/collection/${collection._id }/edit `} className="absolute  right-0 block py-2 px-3 no-underline font-light  bg-[#3C3C34] bg-opacity-60 text-[#F5F5F5]">Edit</Link>         
 
                   <Link to={`/collection/${collection._id}`}>
                         <img className="lg:h-full lg:w-full h-[40vh] w-[60vw] " 
