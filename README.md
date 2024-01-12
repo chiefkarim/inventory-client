@@ -3,4 +3,4 @@ live preview: https://ecommerce.karimmenna.com/
 back-end : https://github.com/chiefkarim/inventory
 username: admin
 password: tech community
-preview image : ![Alt text](preveiw.jpg)
+preview image : ![preview image](preveiw.png)
